@@ -149,7 +149,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 04",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-wide"
+    "tileType": "tile-tall"
   },
   {
     "id": 5,
@@ -159,7 +159,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 05",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-square"
+    "tileType": "tile-wide"
   },
   {
     "id": 6,
@@ -169,7 +169,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 06",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-tall"
+    "tileType": "tile-square"
   },
   {
     "id": 7,
@@ -189,7 +189,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 08",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-square"
+    "tileType": "tile-tall"
   },
   {
     "id": 9,
@@ -199,7 +199,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 09",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-hero"
+    "tileType": "tile-square"
   },
   {
     "id": 10,
@@ -209,7 +209,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 10",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-square"
+    "tileType": "tile-wide"
   },
   {
     "id": 11,
@@ -219,7 +219,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 11",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-wide"
+    "tileType": "tile-hero"
   },
   {
     "id": 12,
@@ -239,7 +239,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 13",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-square"
+    "tileType": "tile-wide"
   },
   {
     "id": 14,
@@ -249,7 +249,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 14",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-wide"
+    "tileType": "tile-square"
   },
   {
     "id": 15,
@@ -259,7 +259,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 15",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-square"
+    "tileType": "tile-tall"
   },
   {
     "id": 16,
@@ -269,7 +269,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 16",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-tall"
+    "tileType": "tile-wide"
   },
   {
     "id": 17,
@@ -279,7 +279,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 17",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-hero"
+    "tileType": "tile-square"
   },
   {
     "id": 18,
@@ -299,7 +299,7 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 19",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-wide"
+    "tileType": "tile-tall"
   },
   {
     "id": 20,
@@ -309,344 +309,14 @@ const DEFAULT_GALLERY_PHOTOS = [
     "caption": "Durga Puja 2026 \u00b7 Moment 20",
     "category": "durga-2026",
     "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 21,
-    "filename": "sangathani-durga-puja-2026-21.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-21.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-21.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 21",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-hero"
-  },
-  {
-    "id": 22,
-    "filename": "sangathani-durga-puja-2026-22.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-22.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-22.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 22",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 23,
-    "filename": "sangathani-durga-puja-2026-23.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-23.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-23.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 23",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 24,
-    "filename": "sangathani-durga-puja-2026-24.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-24.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-24.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 24",
-    "category": "durga-2026",
-    "year": "2026",
     "tileType": "tile-wide"
-  },
-  {
-    "id": 25,
-    "filename": "sangathani-durga-puja-2026-25.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-25.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-25.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 25",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 26,
-    "filename": "sangathani-durga-puja-2026-26.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-26.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-26.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 26",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 27,
-    "filename": "sangathani-durga-puja-2026-27.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-27.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-27.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 27",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 28,
-    "filename": "sangathani-durga-puja-2026-28.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-28.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-28.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 28",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 29,
-    "filename": "sangathani-durga-puja-2026-29.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-29.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-29.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 29",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-hero"
-  },
-  {
-    "id": 30,
-    "filename": "sangathani-durga-puja-2026-30.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-30.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-30.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 30",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 31,
-    "filename": "sangathani-durga-puja-2026-31.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-31.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-31.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 31",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 32,
-    "filename": "sangathani-durga-puja-2026-32.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-32.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-32.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 32",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 33,
-    "filename": "sangathani-durga-puja-2026-33.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-33.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-33.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 33",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 34,
-    "filename": "sangathani-durga-puja-2026-34.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-34.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-34.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 34",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 35,
-    "filename": "sangathani-durga-puja-2026-35.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-35.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-35.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 35",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 36,
-    "filename": "sangathani-durga-puja-2026-36.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-36.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-36.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 36",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 37,
-    "filename": "sangathani-durga-puja-2026-37.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-37.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-37.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 37",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-hero"
-  },
-  {
-    "id": 38,
-    "filename": "sangathani-durga-puja-2026-38.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-38.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-38.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 38",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 39,
-    "filename": "sangathani-durga-puja-2026-39.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-39.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-39.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 39",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 40,
-    "filename": "sangathani-durga-puja-2026-40.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-40.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-40.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 40",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 41,
-    "filename": "sangathani-durga-puja-2026-41.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-41.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-41.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 41",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-hero"
-  },
-  {
-    "id": 42,
-    "filename": "sangathani-durga-puja-2026-42.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-42.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-42.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 42",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 43,
-    "filename": "sangathani-durga-puja-2026-43.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-43.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-43.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 43",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 44,
-    "filename": "sangathani-durga-puja-2026-44.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-44.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-44.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 44",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 45,
-    "filename": "sangathani-durga-puja-2026-45.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-45.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-45.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 45",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 46,
-    "filename": "sangathani-durga-puja-2026-46.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-46.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-46.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 46",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 47,
-    "filename": "sangathani-durga-puja-2026-47.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-47.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-47.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 47",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 48,
-    "filename": "sangathani-durga-puja-2026-48.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-48.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-48.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 48",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 49,
-    "filename": "sangathani-durga-puja-2026-49.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-49.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-49.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 49",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-hero"
-  },
-  {
-    "id": 50,
-    "filename": "sangathani-durga-puja-2026-50.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-50.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-50.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 50",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
-  },
-  {
-    "id": 51,
-    "filename": "sangathani-durga-puja-2026-51.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-51.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-51.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 51",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-wide"
-  },
-  {
-    "id": 52,
-    "filename": "sangathani-durga-puja-2026-52.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-52.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-52.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 52",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-tall"
-  },
-  {
-    "id": 53,
-    "filename": "sangathani-durga-puja-2026-53.jpg",
-    "src": "Photos/gallery/sangathani-durga-puja-2026-53.jpg",
-    "downloadName": "sangathani-club-durga-puja-2026-53.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 53",
-    "category": "durga-2026",
-    "year": "2026",
-    "tileType": "tile-square"
   }
 ];
 
 let currentLightboxIndex = 0;
 let lastActiveGalleryTrigger = null;
 const TOTAL_PHOTOS = DEFAULT_GALLERY_PHOTOS.length;
-const PREVIEW_LIMIT = 12;
+const PREVIEW_LIMIT = 10;
 
 function initGallery() {
   const masonryGrid = document.getElementById('gallery-masonry');
@@ -687,10 +357,10 @@ function initGallery() {
   // If for any reason DOM was empty, generate tiles
   if (masonryGrid.children.length === 0) {
     const rhythms = [
-      'tile-hero', 'tile-tall', 'tile-square', 'tile-wide', 'tile-square',
-      'tile-tall', 'tile-wide', 'tile-square', 'tile-hero', 'tile-square',
-      'tile-wide', 'tile-tall', 'tile-square', 'tile-wide', 'tile-square',
-      'tile-tall', 'tile-hero', 'tile-square', 'tile-wide', 'tile-tall'
+      'tile-hero', 'tile-tall', 'tile-square', 'tile-tall', 'tile-wide',
+      'tile-square', 'tile-wide', 'tile-tall', 'tile-square', 'tile-wide',
+      'tile-hero', 'tile-tall', 'tile-wide', 'tile-square', 'tile-tall',
+      'tile-wide', 'tile-square', 'tile-square', 'tile-tall', 'tile-wide'
     ];
 
     DEFAULT_GALLERY_PHOTOS.forEach((item, index) => {
@@ -790,7 +460,6 @@ function initGallery() {
         });
         if (expandContainer) expandContainer.style.display = 'flex';
       } else {
-        // Other collection filters (e.g. Kali Puja, Cultural, Blood Donation)
         allTiles.forEach(tile => tile.classList.add('tile-hidden'));
         if (expandContainer) expandContainer.style.display = 'none';
       }
@@ -837,7 +506,7 @@ function openLightbox(index) {
   const captionText = document.getElementById('lightbox-caption-text');
   const downloadBtn = document.getElementById('lightbox-download-btn');
 
-  // Format index string (e.g. 07 / 53)
+  // Format index string (e.g. 07 / 20)
   const currentNumStr = String(currentLightboxIndex + 1).padStart(2, '0');
   const totalNumStr = String(TOTAL_PHOTOS).padStart(2, '0');
 

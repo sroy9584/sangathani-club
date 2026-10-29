@@ -1,8 +1,6 @@
 """
 Sangathani Club - Durga Puja 2026 Gallery Synchronizer
-Scans Photos/gallery/ for photos from the Google Photos album:
-https://photos.app.goo.gl/PCDCMPtp4z3qr3jR6
-and registers them for the editorial masonry gallery and lightbox.
+Scans Photos/gallery/ and registers them for the editorial masonry gallery and lightbox.
 """
 
 import os
@@ -25,10 +23,10 @@ def sync_gallery():
     print(f"Found {len(files)} photos in {GALLERY_DIR}")
 
     rhythms = [
-        'tile-hero', 'tile-tall', 'tile-square', 'tile-wide', 'tile-square',
-        'tile-tall', 'tile-wide', 'tile-square', 'tile-hero', 'tile-square',
-        'tile-wide', 'tile-tall', 'tile-square', 'tile-wide', 'tile-square',
-        'tile-tall', 'tile-hero', 'tile-square', 'tile-wide', 'tile-tall'
+        'tile-hero', 'tile-tall', 'tile-square', 'tile-tall', 'tile-wide',
+        'tile-square', 'tile-wide', 'tile-tall', 'tile-square', 'tile-wide',
+        'tile-hero', 'tile-tall', 'tile-wide', 'tile-square', 'tile-tall',
+        'tile-wide', 'tile-square', 'tile-square', 'tile-tall', 'tile-wide'
     ]
 
     items = []
@@ -55,4 +53,3 @@ def sync_gallery():
 
 if __name__ == "__main__":
     sync_gallery()
-
