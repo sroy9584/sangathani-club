@@ -1,0 +1,7 @@
+# Ignore large source PSD files to keep repository fast and lightweight
+Photos/*.psd
+
+# Generated temp files
+mobile_qr.png
+Thumbs.db
+.DS_Store
