@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initGallery();
   initLightbox();
-  initTestimonialSlider();
   initModals();
   initForms();
   initScrollSpy();
@@ -249,91 +248,7 @@ function initLightbox() {
 }
 
 /* ==========================================================================
-   6. TESTIMONIALS SLIDER
-   ========================================================================== */
-const testimonialsData = [
-  {
-    quote: "Sangathani Club has been my second home for over four decades. From crafting the first bamboo scaffolding in the 1980s to watching our grandchildren perform Rabindra Sangeet, this club represents the purest heartbeat of Bengali heritage.",
-    name: "Amitava Sengupta",
-    role: "Patron & Life Member (42 Years)",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    quote: "The sheer warmth and discipline of our neighborhood Puja is incomparable. While visiting mega pandals feels overwhelming, stepping into Sangathani feels like returning to your family courtyard for Pushpanjali.",
-    name: "Sharmila Banerjee",
-    role: "Local Resident & Cultural Committee Lead",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    quote: "Managing the crowd on Ashtami night and coordinating the annual blood donation drive taught me true leadership. Sangathani empowers young volunteers to take ownership and serve with pride.",
-    name: "Souvik Roy",
-    role: "Youth Wing Coordinator & Volunteer Lead",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    quote: "My very first classical dance recital was on the Sangathani stage at age seven. Today, returning as an Odissi exponent, I see how our club nurtures artistic confidence and roots generations in classical art.",
-    name: "Debolina Ghosh",
-    role: "Classical Performer & Choreographer",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    quote: "In a world of commercialized festivals, Sangathani's commitment to social impact is extraordinary. Donating blood here every autumn has become a sacred personal ritual for the past ten years.",
-    name: "Dr. Arindam Mukherjee",
-    role: "Regular Blood Donor & Medical Volunteer",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80"
-  }
-];
-
-function initTestimonialSlider() {
-  let currentIndex = 0;
-  const quoteEl = document.getElementById('test-quote');
-  const nameEl = document.getElementById('test-name');
-  const roleEl = document.getElementById('test-role');
-  const photoEl = document.getElementById('test-photo');
-  const prevBtn = document.getElementById('test-prev');
-  const nextBtn = document.getElementById('test-next');
-
-  if (!quoteEl || !nameEl) return;
-
-  function render(index) {
-    const item = testimonialsData[index];
-    quoteEl.style.opacity = '0';
-    quoteEl.style.transform = 'translateY(10px)';
-
-    setTimeout(() => {
-      quoteEl.innerText = `"${item.quote}"`;
-      nameEl.innerText = item.name;
-      roleEl.innerText = item.role;
-      if (photoEl) photoEl.src = item.image;
-
-      quoteEl.style.opacity = '1';
-      quoteEl.style.transform = 'translateY(0)';
-    }, 180);
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % testimonialsData.length;
-      render(currentIndex);
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + testimonialsData.length) % testimonialsData.length;
-      render(currentIndex);
-    });
-  }
-
-  // Auto rotate every 8 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % testimonialsData.length;
-    render(currentIndex);
-  }, 8000);
-}
-
-/* ==========================================================================
-   7. INTERACTIVE MODALS
+   6. INTERACTIVE MODALS
    ========================================================================== */
 function initModals() {
   // Cultural Modal
