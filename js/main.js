@@ -362,7 +362,7 @@ function initGallery() {
   if (!masonryGrid) return;
 
   let activeCategory = 'all';
-  let activeYear = '2026';
+  let activeYear = 'all';
   let isExpanded = false;
   let currentFilteredTiles = [];
 
@@ -390,10 +390,59 @@ function initGallery() {
     });
   }
 
+  // Interleave / Shuffle all memories so photos from all categories appear mixed and random
+  function shuffleAllMemories(tiles) {
+    if (tiles.length <= 1) return tiles;
+
+    // Group tiles by category
+    const groups = {};
+    tiles.forEach(tile => {
+      const cat = tile.dataset.category || 'other';
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(tile);
+    });
+
+    // Shuffle each category list internally with Fisher-Yates
+    Object.values(groups).forEach(arr => {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    });
+
+    // Interleave across categories so all categories appear distributed throughout
+    const result = [];
+    const keys = Object.keys(groups);
+    let totalRemaining = tiles.length;
+
+    while (totalRemaining > 0) {
+      const available = keys.filter(k => groups[k].length > 0);
+      available.sort(() => Math.random() - 0.5);
+      for (const k of available) {
+        if (groups[k].length > 0) {
+          result.push(groups[k].pop());
+          totalRemaining--;
+        }
+      }
+    }
+
+    // Local random swaps for natural non-rigid randomness
+    for (let i = 0; i < result.length - 1; i++) {
+      if (Math.random() < 0.45) {
+        const j = i + 1;
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+    }
+
+    return result;
+  }
+
   // Filter application function
   function applyFilters() {
     const allTiles = Array.from(masonryGrid.querySelectorAll('.gallery-tile'));
-    const matchedTiles = allTiles.filter(tile => {
+
+    // Filter strictly by activeCategory AND activeYear
+    let matchedTiles = allTiles.filter(tile => {
       const cat = tile.dataset.category || 'durga';
       const yr = tile.dataset.year || '2026';
 
@@ -407,11 +456,26 @@ function initGallery() {
       return catMatch && yrMatch;
     });
 
-    // Hide all
+    // Hide all tiles initially
     allTiles.forEach(tile => {
       tile.classList.add('tile-hidden');
       tile.style.display = 'none';
     });
+
+    // If All Memories is selected, shuffle items across sections!
+    if (activeCategory === 'all') {
+      matchedTiles = shuffleAllMemories(matchedTiles);
+    } else {
+      // For a specific section/category, keep natural sequential order
+      matchedTiles.sort((a, b) => {
+        const idxA = parseInt(a.dataset.index, 10);
+        const idxB = parseInt(b.dataset.index, 10);
+        return idxA - idxB;
+      });
+    }
+
+    // Re-append to DOM in the new order so CSS grid flows in the desired order
+    matchedTiles.forEach(tile => masonryGrid.appendChild(tile));
 
     currentFilteredTiles = matchedTiles;
 
@@ -432,9 +496,9 @@ function initGallery() {
         emptyEl = document.createElement('div');
         emptyEl.className = 'gallery-empty-state';
         emptyEl.innerHTML = `
-          <i class="fa-solid fa-camera-retro" style="font-size: 2.2rem; color: var(--gold); margin-bottom: 12px; display: block;"></i>
-          <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-primary); margin-bottom: 6px;">No Memories Found</h4>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 420px; margin: 0 auto;">No photos currently archived for this selection. Try choosing <strong>Kali Puja (2025)</strong> or <strong>All Memories</strong>.</p>
+          <i class="fa-solid fa-camera-retro empty-icon"></i>
+          <h4 class="empty-title">No Memories Found</h4>
+          <p class="empty-desc">No photos uploaded for this category in the selected year yet. Try selecting another year or <strong>Archives</strong>.</p>
         `;
         masonryGrid.appendChild(emptyEl);
       }
@@ -449,8 +513,10 @@ function initGallery() {
         expandContainer.style.display = 'flex';
         if (expandBtn) {
           const btnText = expandBtn.querySelector('.expand-btn-text');
-          if (btnText && !isExpanded) {
-            btnText.textContent = `Show All Photos (${matchedTiles.length} Photos)`;
+          if (btnText) {
+            btnText.textContent = isExpanded 
+              ? 'Back to Highlights (Show Less)' 
+              : `Show All Photos (${matchedTiles.length} Photos)`;
           }
         }
       } else {
@@ -537,7 +603,7 @@ function initGallery() {
     };
   }
 
-  // Category filter handlers
+  // Category filter handlers (STRICT: NO AUTO-SWITCHING YEAR)
   filterBtns.forEach(btn => {
     btn.onclick = () => {
       filterBtns.forEach(b => {
@@ -549,64 +615,40 @@ function initGallery() {
 
       activeCategory = btn.getAttribute('data-filter') || 'all';
 
-      // Smart year auto-select: if category is kali and year is 2026, auto-switch to 2025
-      if (activeCategory === 'kali' && activeYear === '2026') {
-        activeYear = '2025';
-        yearBtns.forEach(b => {
-          if (b.getAttribute('data-year-filter') === '2025') b.classList.add('active');
-          else b.classList.remove('active');
-        });
-      } else if (activeCategory === 'durga' && activeYear === '2025') {
-        activeYear = '2026';
-        yearBtns.forEach(b => {
-          if (b.getAttribute('data-year-filter') === '2026') b.classList.add('active');
-          else b.classList.remove('active');
-        });
+      // Reset expand state on filter change
+      isExpanded = false;
+      if (expandBtn) {
+        expandBtn.classList.remove('expanded');
+        expandBtn.setAttribute('aria-expanded', 'false');
       }
 
       applyFilters();
     };
   });
 
-  // Year filter handlers
+  // Year filter handlers (STRICT: NO AUTO-SWITCHING CATEGORY)
   yearBtns.forEach(btn => {
     btn.onclick = () => {
       yearBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
       activeYear = btn.getAttribute('data-year-filter') || 'all';
 
-      // Smart category auto-select
-      if (activeYear === '2025' && activeCategory === 'durga') {
-        activeCategory = 'kali';
-        filterBtns.forEach(b => {
-          if (b.getAttribute('data-filter') === 'kali') {
-            b.classList.add('active');
-            b.setAttribute('aria-selected', 'true');
-          } else {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          }
-        });
-      } else if (activeYear === '2026' && activeCategory === 'kali') {
-        activeCategory = 'durga';
-        filterBtns.forEach(b => {
-          if (b.getAttribute('data-filter') === 'durga') {
-            b.classList.add('active');
-            b.setAttribute('aria-selected', 'true');
-          } else {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          }
-        });
+      // Reset expand state on filter change
+      isExpanded = false;
+      if (expandBtn) {
+        expandBtn.classList.remove('expanded');
+        expandBtn.setAttribute('aria-expanded', 'false');
       }
 
       applyFilters();
     };
   });
 
-  // Initial filter run
+  // Initial filter run on page load
   applyFilters();
 }
+
 
 /* ==========================================================================
    5. FULLSCREEN IMMERSIVE LIGHTBOX & DOWNLOAD ACTIONS
