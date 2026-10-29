@@ -3604,3 +3604,17 @@ body.lightbox-open {
     white-space: normal;
   }
 }
+
+
+/* Gallery Empty State Card */
+.gallery-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px 24px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1.5px dashed rgba(230, 57, 70, 0.25);
+  border-radius: var(--radius-lg);
+  margin: 16px 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

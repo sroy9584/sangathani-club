@@ -116,8 +116,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-01.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-01.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-01.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 01",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 01",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-hero"
   },
@@ -126,8 +126,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-02.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-02.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-02.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 02",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 02",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -136,8 +136,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-03.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-03.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-03.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 03",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 03",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -146,8 +146,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-04.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-04.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-04.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 04",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 04",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -156,8 +156,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-05.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-05.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-05.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 05",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 05",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
   },
@@ -166,8 +166,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-06.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-06.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-06.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 06",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 06",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -176,8 +176,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-07.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-07.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-07.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 07",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 07",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
   },
@@ -186,8 +186,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-08.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-08.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-08.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 08",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 08",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -196,8 +196,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-09.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-09.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-09.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 09",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 09",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -206,8 +206,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-10.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-10.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-10.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 10",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 10",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
   },
@@ -216,8 +216,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-11.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-11.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-11.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 11",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 11",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-hero"
   },
@@ -226,8 +226,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-12.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-12.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-12.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 12",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 12",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -236,8 +236,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-13.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-13.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-13.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 13",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 13",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
   },
@@ -246,8 +246,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-14.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-14.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-14.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 14",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 14",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -256,8 +256,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-15.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-15.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-15.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 15",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 15",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -266,8 +266,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-16.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-16.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-16.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 16",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 16",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
   },
@@ -276,8 +276,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-17.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-17.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-17.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 17",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 17",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -286,8 +286,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-18.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-18.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-18.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 18",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 18",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-square"
   },
@@ -296,8 +296,8 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-19.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-19.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-19.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 19",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 19",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-tall"
   },
@@ -306,18 +306,52 @@ const DEFAULT_GALLERY_PHOTOS = [
     "filename": "sangathani-durga-puja-2026-20.jpg",
     "src": "Photos/gallery/sangathani-durga-puja-2026-20.jpg",
     "downloadName": "sangathani-club-durga-puja-2026-20.jpg",
-    "caption": "Durga Puja 2026 \u00b7 Moment 20",
-    "category": "durga-2026",
+    "caption": "Durga Puja 2026 · Moment 20",
+    "category": "durga",
     "year": "2026",
     "tileType": "tile-wide"
+  },
+  {
+    "id": 21,
+    "filename": "sangathani-kali-puja-2025-01.jpg",
+    "src": "Photos/gallery/sangathani-kali-puja-2025-01.jpg",
+    "downloadName": "sangathani-club-kali-puja-2025-21.jpg",
+    "caption": "Shyama Kali Puja 2025 · Moment 21",
+    "category": "kali",
+    "year": "2025",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 22,
+    "filename": "sangathani-kali-puja-2025-02.jpg",
+    "src": "Photos/gallery/sangathani-kali-puja-2025-02.jpg",
+    "downloadName": "sangathani-club-kali-puja-2025-22.jpg",
+    "caption": "Shyama Kali Puja 2025 · Moment 22",
+    "category": "kali",
+    "year": "2025",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 23,
+    "filename": "sangathani-kali-puja-2025-03.jpg",
+    "src": "Photos/gallery/sangathani-kali-puja-2025-03.jpg",
+    "downloadName": "sangathani-club-kali-puja-2025-23.jpg",
+    "caption": "Shyama Kali Puja 2025 · Moment 23",
+    "category": "kali",
+    "year": "2025",
+    "tileType": "tile-square"
   }
 ];
 
 let currentLightboxIndex = 0;
 let lastActiveGalleryTrigger = null;
+let activeLightboxList = [];
 const TOTAL_PHOTOS = DEFAULT_GALLERY_PHOTOS.length;
 const PREVIEW_LIMIT = 10;
 
+/* ==========================================================================
+   4. DYNAMIC MASONRY GALLERY & FILTERING
+   ========================================================================== */
 function initGallery() {
   const masonryGrid = document.getElementById('gallery-masonry');
   const expandContainer = document.getElementById('gallery-expand-container');
@@ -327,45 +361,112 @@ function initGallery() {
 
   if (!masonryGrid) return;
 
+  let activeCategory = 'all';
+  let activeYear = '2026';
   let isExpanded = false;
+  let currentFilteredTiles = [];
 
   // Bind click & keydown handlers to all gallery tiles
   function bindTileHandlers() {
     const tiles = masonryGrid.querySelectorAll('.gallery-tile');
-    tiles.forEach(tile => {{
-      const idx = parseInt(tile.dataset.index, 10);
-
-      tile.onclick = (e) => {{
+    tiles.forEach(tile => {
+      tile.onclick = (e) => {
         e.preventDefault();
         lastActiveGalleryTrigger = tile;
-        openLightbox(idx);
-      }};
+        const currentList = currentFilteredTiles.length > 0 ? currentFilteredTiles : Array.from(masonryGrid.querySelectorAll('.gallery-tile'));
+        const targetIdx = currentList.indexOf(tile);
+        openLightbox(targetIdx !== -1 ? targetIdx : 0, currentList);
+      };
 
-      tile.onkeydown = (e) => {{
-        if (e.key === 'Enter' || e.key === ' ') {{
+      tile.onkeydown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           lastActiveGalleryTrigger = tile;
-          openLightbox(idx);
-        }}
-      }};
-    }});
+          const currentList = currentFilteredTiles.length > 0 ? currentFilteredTiles : Array.from(masonryGrid.querySelectorAll('.gallery-tile'));
+          const targetIdx = currentList.indexOf(tile);
+          openLightbox(targetIdx !== -1 ? targetIdx : 0, currentList);
+        }
+      };
+    });
   }
 
-  // Initial binding for pre-rendered tiles in index.html
+  // Filter application function
+  function applyFilters() {
+    const allTiles = Array.from(masonryGrid.querySelectorAll('.gallery-tile'));
+    const matchedTiles = allTiles.filter(tile => {
+      const cat = tile.dataset.category || 'durga';
+      const yr = tile.dataset.year || '2026';
+
+      const catMatch = (activeCategory === 'all') || 
+                       (cat === activeCategory) || 
+                       (activeCategory === 'durga' && cat.includes('durga'));
+
+      const yrMatch = (activeYear === 'all' || activeYear === 'archives') || 
+                      (yr === activeYear);
+
+      return catMatch && yrMatch;
+    });
+
+    // Hide all
+    allTiles.forEach(tile => {
+      tile.classList.add('tile-hidden');
+      tile.style.display = 'none';
+    });
+
+    currentFilteredTiles = matchedTiles;
+
+    // Show matched tiles with preview pagination limit
+    matchedTiles.forEach((tile, idx) => {
+      tile.style.display = '';
+      if (isExpanded || idx < PREVIEW_LIMIT) {
+        tile.classList.remove('tile-hidden');
+      } else {
+        tile.classList.add('tile-hidden');
+      }
+    });
+
+    // Empty state message handling
+    let emptyEl = masonryGrid.querySelector('.gallery-empty-state');
+    if (matchedTiles.length === 0) {
+      if (!emptyEl) {
+        emptyEl = document.createElement('div');
+        emptyEl.className = 'gallery-empty-state';
+        emptyEl.innerHTML = `
+          <i class="fa-solid fa-camera-retro" style="font-size: 2.2rem; color: var(--gold); margin-bottom: 12px; display: block;"></i>
+          <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-primary); margin-bottom: 6px;">No Memories Found</h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 420px; margin: 0 auto;">No photos currently archived for this selection. Try choosing <strong>Kali Puja (2025)</strong> or <strong>All Memories</strong>.</p>
+        `;
+        masonryGrid.appendChild(emptyEl);
+      }
+      emptyEl.style.display = 'block';
+    } else if (emptyEl) {
+      emptyEl.style.display = 'none';
+    }
+
+    // Expand button handling
+    if (expandContainer) {
+      if (matchedTiles.length > PREVIEW_LIMIT) {
+        expandContainer.style.display = 'flex';
+        if (expandBtn) {
+          const btnText = expandBtn.querySelector('.expand-btn-text');
+          if (btnText && !isExpanded) {
+            btnText.textContent = `Show All Photos (${matchedTiles.length} Photos)`;
+          }
+        }
+      } else {
+        expandContainer.style.display = 'none';
+      }
+    }
+  }
+
+  // Initial binding
   bindTileHandlers();
 
   // If for any reason DOM was empty, generate tiles
   if (masonryGrid.children.length === 0) {
-    const rhythms = [
-      'tile-hero', 'tile-tall', 'tile-square', 'tile-tall', 'tile-wide',
-      'tile-square', 'tile-wide', 'tile-tall', 'tile-square', 'tile-wide',
-      'tile-hero', 'tile-tall', 'tile-wide', 'tile-square', 'tile-tall',
-      'tile-wide', 'tile-square', 'tile-square', 'tile-tall', 'tile-wide'
-    ];
-
     DEFAULT_GALLERY_PHOTOS.forEach((item, index) => {
       const tile = document.createElement('div');
-      const patternClass = item.tileType || rhythms[index % rhythms.length];
+      const patternClass = item.tileType || 'tile-square';
       const isHidden = index >= PREVIEW_LIMIT;
 
       tile.className = `gallery-tile ${patternClass} ${isHidden ? 'tile-hidden' : ''}`;
@@ -373,9 +474,14 @@ function initGallery() {
       tile.setAttribute('tabindex', '0');
       tile.setAttribute('aria-label', `View photo: ${item.caption}`);
       tile.dataset.index = index;
+      tile.dataset.category = item.category || 'durga';
+      tile.dataset.year = item.year || '2026';
       tile.dataset.src = item.src;
       tile.dataset.download = item.downloadName;
       tile.dataset.caption = item.caption;
+
+      const badgeText = item.category === 'kali' ? 'Kali Puja 2025' : 'Durga Puja 2026';
+      const badgeStyle = item.category === 'kali' ? 'style="background: rgba(230, 57, 70, 0.9);"' : '';
 
       tile.innerHTML = `
         <img src="${item.src}" alt="${item.caption}" loading="lazy" />
@@ -386,7 +492,7 @@ function initGallery() {
             </span>
           </div>
           <div class="tile-bottom-bar">
-            <span class="tile-badge">Durga Puja 2026</span>
+            <span class="tile-badge" ${badgeStyle}>${badgeText}</span>
             <div class="tile-caption">${item.caption}</div>
           </div>
         </div>
@@ -398,11 +504,6 @@ function initGallery() {
     bindTileHandlers();
   }
 
-  // Ensure expand button container is visible
-  if (expandContainer) {
-    expandContainer.style.display = 'flex';
-  }
-
   // Setup Expand / Collapse toggle
   if (expandBtn) {
     const btnText = expandBtn.querySelector('.expand-btn-text');
@@ -411,8 +512,7 @@ function initGallery() {
       e.preventDefault();
       isExpanded = !isExpanded;
 
-      const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
-      allTiles.forEach((tile, idx) => {
+      currentFilteredTiles.forEach((tile, idx) => {
         if (idx >= PREVIEW_LIMIT) {
           if (isExpanded) {
             tile.classList.remove('tile-hidden');
@@ -429,7 +529,7 @@ function initGallery() {
         expandBtn.classList.add('expanded');
         expandBtn.setAttribute('aria-expanded', 'true');
       } else {
-        if (btnText) btnText.textContent = `Show All Photos (${TOTAL_PHOTOS} Photos)`;
+        if (btnText) btnText.textContent = `Show All Photos (${currentFilteredTiles.length} Photos)`;
         expandBtn.classList.remove('expanded');
         expandBtn.setAttribute('aria-expanded', 'false');
         masonryGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -447,22 +547,24 @@ function initGallery() {
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
 
-      const filter = btn.getAttribute('data-filter');
-      const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
+      activeCategory = btn.getAttribute('data-filter') || 'all';
 
-      if (filter === 'durga-2026' || filter === 'durga' || filter === 'all') {
-        allTiles.forEach((tile, idx) => {
-          if (isExpanded || idx < PREVIEW_LIMIT) {
-            tile.classList.remove('tile-hidden');
-          } else {
-            tile.classList.add('tile-hidden');
-          }
+      // Smart year auto-select: if category is kali and year is 2026, auto-switch to 2025
+      if (activeCategory === 'kali' && activeYear === '2026') {
+        activeYear = '2025';
+        yearBtns.forEach(b => {
+          if (b.getAttribute('data-year-filter') === '2025') b.classList.add('active');
+          else b.classList.remove('active');
         });
-        if (expandContainer) expandContainer.style.display = 'flex';
-      } else {
-        allTiles.forEach(tile => tile.classList.add('tile-hidden'));
-        if (expandContainer) expandContainer.style.display = 'none';
+      } else if (activeCategory === 'durga' && activeYear === '2025') {
+        activeYear = '2026';
+        yearBtns.forEach(b => {
+          if (b.getAttribute('data-year-filter') === '2026') b.classList.add('active');
+          else b.classList.remove('active');
+        });
       }
+
+      applyFilters();
     };
   });
 
@@ -471,44 +573,67 @@ function initGallery() {
     btn.onclick = () => {
       yearBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const yr = btn.getAttribute('data-year-filter');
-      const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
+      activeYear = btn.getAttribute('data-year-filter') || 'all';
 
-      if (yr === '2026' || yr === 'all' || yr === 'archives') {
-        allTiles.forEach((tile, idx) => {
-          if (isExpanded || idx < PREVIEW_LIMIT) {
-            tile.classList.remove('tile-hidden');
+      // Smart category auto-select
+      if (activeYear === '2025' && activeCategory === 'durga') {
+        activeCategory = 'kali';
+        filterBtns.forEach(b => {
+          if (b.getAttribute('data-filter') === 'kali') {
+            b.classList.add('active');
+            b.setAttribute('aria-selected', 'true');
           } else {
-            tile.classList.add('tile-hidden');
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
           }
         });
-        if (expandContainer) expandContainer.style.display = 'flex';
-      } else {
-        allTiles.forEach(tile => tile.classList.add('tile-hidden'));
-        if (expandContainer) expandContainer.style.display = 'none';
+      } else if (activeYear === '2026' && activeCategory === 'kali') {
+        activeCategory = 'durga';
+        filterBtns.forEach(b => {
+          if (b.getAttribute('data-filter') === 'durga') {
+            b.classList.add('active');
+            b.setAttribute('aria-selected', 'true');
+          } else {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          }
+        });
       }
+
+      applyFilters();
     };
   });
+
+  // Initial filter run
+  applyFilters();
 }
 
 /* ==========================================================================
    5. FULLSCREEN IMMERSIVE LIGHTBOX & DOWNLOAD ACTIONS
    ========================================================================== */
-function openLightbox(index) {
+function openLightbox(index, list) {
   const lightbox = document.getElementById('lightbox-modal');
   if (!lightbox) return;
 
-  currentLightboxIndex = (index + TOTAL_PHOTOS) % TOTAL_PHOTOS;
-  const currentItem = DEFAULT_GALLERY_PHOTOS[currentLightboxIndex];
+  activeLightboxList = (list && list.length > 0) ? list : Array.from(document.querySelectorAll('.gallery-tile:not([style*="display: none"])'));
+  const total = activeLightboxList.length;
+  if (total === 0) return;
+
+  currentLightboxIndex = ((index % total) + total) % total;
+  const tile = activeLightboxList[currentLightboxIndex];
+
+  const src = tile.dataset.src;
+  const caption = tile.dataset.caption || 'Sangathani Club Photo';
+  const downloadName = tile.dataset.download || 'sangathani-photo.jpg';
 
   const mainImg = document.getElementById('lightbox-main-img');
   const counter = document.getElementById('lightbox-counter');
   const captionText = document.getElementById('lightbox-caption-text');
   const downloadBtn = document.getElementById('lightbox-download-btn');
 
-  // Format index string (e.g. 07 / 20)
+  // Format index string (e.g. 01 / 03)
   const currentNumStr = String(currentLightboxIndex + 1).padStart(2, '0');
-  const totalNumStr = String(TOTAL_PHOTOS).padStart(2, '0');
+  const totalNumStr = String(total).padStart(2, '0');
 
   if (counter) {
     counter.textContent = `${currentNumStr} / ${totalNumStr}`;
@@ -516,22 +641,21 @@ function openLightbox(index) {
 
   if (mainImg) {
     mainImg.style.opacity = '0.4';
-    mainImg.src = currentItem.src;
-    mainImg.alt = currentItem.caption || 'Sangathani Club Durga Puja 2026';
+    mainImg.src = src;
+    mainImg.alt = caption;
     mainImg.onload = () => {
       mainImg.style.opacity = '1';
     };
   }
 
   if (captionText) {
-    captionText.textContent = currentItem.caption || `Durga Puja 2026 · Moment ${currentNumStr}`;
+    captionText.textContent = caption;
   }
 
   // Download Action - Direct file download with safe filename
   if (downloadBtn) {
-    const safeFilename = currentItem.downloadName || `sangathani-club-durga-puja-2026-${currentNumStr}.jpg`;
-    downloadBtn.href = currentItem.src;
-    downloadBtn.download = safeFilename;
+    downloadBtn.href = src;
+    downloadBtn.download = downloadName;
     downloadBtn.style.display = 'inline-flex';
   }
 
@@ -557,11 +681,11 @@ function closeLightbox() {
 }
 
 function nextLightboxImage() {
-  openLightbox(currentLightboxIndex + 1);
+  openLightbox(currentLightboxIndex + 1, activeLightboxList);
 }
 
 function prevLightboxImage() {
-  openLightbox(currentLightboxIndex - 1);
+  openLightbox(currentLightboxIndex - 1, activeLightboxList);
 }
 
 function initLightbox() {
