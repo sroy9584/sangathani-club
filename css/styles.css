@@ -3714,18 +3714,22 @@ body.lightbox-open {
 
 .puja-teaser-img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
   object-fit: cover;
   filter: brightness(0.68) contrast(1.15) blur(3px);
-  transform: scale(1.05);
-  transition: filter 0.6s ease, transform 0.6s ease;
+  animation: teaserBgZoomLoop 9s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-.puja-visual-frame:hover .puja-teaser-img {
-  filter: brightness(0.76) contrast(1.2) blur(2px);
-  transform: scale(1.08);
+@keyframes teaserBgZoomLoop {
+  0% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1.14);
+  }
 }
 
 .puja-teaser-dark-layer {
@@ -3748,6 +3752,33 @@ body.lightbox-open {
   pointer-events: none;
 }
 
+.teaser-center-badge::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(242, 165, 22, 0.38) 0%, rgba(242, 29, 47, 0.22) 50%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: -1;
+  animation: teaserAmbientGlowLoop 3.2s ease-in-out infinite;
+}
+
+@keyframes teaserAmbientGlowLoop {
+  0%, 100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
 .teaser-pretitle {
   font-size: 0.8rem;
   font-weight: 800;
@@ -3765,15 +3796,36 @@ body.lightbox-open {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #FFFFFF;
-  text-shadow: 
-    0 4px 22px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(242, 29, 47, 0.75),
-    0 0 60px rgba(242, 165, 22, 0.45);
   line-height: 1;
   margin: 4px 0 14px;
   background: linear-gradient(180deg, #FFFFFF 15%, #FFF2D6 65%, #F2A516 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: comingSoonGlowLoop 3.2s ease-in-out infinite;
+  will-change: filter;
+}
+
+@keyframes comingSoonGlowLoop {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(242, 165, 22, 0.45))
+            drop-shadow(0 0 25px rgba(242, 29, 47, 0.35))
+            drop-shadow(0 4px 16px rgba(0, 0, 0, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px rgba(242, 165, 22, 0.9))
+            drop-shadow(0 0 48px rgba(242, 29, 47, 0.7))
+            drop-shadow(0 0 70px rgba(255, 215, 0, 0.45))
+            drop-shadow(0 4px 22px rgba(0, 0, 0, 0.95));
+  }
+}
+
+.venue-date-highlight {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 3px;
+  letter-spacing: 0.02em;
 }
 
 .teaser-subtext {
