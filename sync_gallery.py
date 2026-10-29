@@ -55,3 +55,4 @@ def sync_gallery():
 
 if __name__ == "__main__":
     sync_gallery()
+
