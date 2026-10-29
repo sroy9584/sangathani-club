@@ -2033,16 +2033,87 @@ ol {
 }
 
 .service-main-photo {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: 350px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
 }
 
-.service-main-photo img {
+.service-main-photo:active {
+  cursor: grabbing;
+}
+
+.service-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.service-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.service-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.0);
+  transition: transform 2.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-slide.active img {
+  transform: scale(1.06);
+}
+
+/* Subtle dot indicators inside slideshow */
+.service-slide-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 6;
+  background: rgba(10, 12, 18, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.service-slide-indicators .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.service-slide-indicators .dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.service-slide-indicators .dot.active {
+  width: 18px;
+  border-radius: 6px;
+  background: var(--gold, #E5A93C);
 }
 
 /* Impact Badge Floating */
@@ -2050,6 +2121,8 @@ ol {
   position: absolute;
   bottom: -16px;
   right: -14px;
+  z-index: 10;
+  pointer-events: none;
   background: rgba(24, 26, 32, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);

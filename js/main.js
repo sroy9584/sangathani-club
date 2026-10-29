@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initForms();
   initScrollSpy();
+  initServiceSlideshow();
 });
 
 /* ==========================================================================
@@ -986,4 +987,150 @@ function initScrollSpy() {
       }
     });
   }, { passive: true });
+}
+
+
+/* ==========================================================================
+   10. SOCIAL SERVICE BLOOD DONATION PHOTO SLIDESHOW
+   - Auto cross-dissolve every 2 seconds with smooth zoom
+   - Touch swipe & mouse drag navigation
+   ========================================================================== */
+function initServiceSlideshow() {
+  const container = document.getElementById('serviceSlideshow');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.service-slide');
+  const dots = container.querySelectorAll('.service-slide-indicators .dot');
+  if (!slides || slides.length === 0) return;
+
+  let currentIndex = 0;
+  let timer = null;
+  const slideInterval = 2000; // 2 seconds per slide
+
+  function goToSlide(index) {
+    if (index < 0) {
+      index = slides.length - 1;
+    } else if (index >= slides.length) {
+      index = 0;
+    }
+
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    timer = setInterval(nextSlide, slideInterval);
+  }
+
+  function stopAutoPlay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  // Dot navigation click
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToSlide(idx);
+      startAutoPlay();
+    });
+  });
+
+  // Touch Swipe Support (finger swipe on mobile / touchscreens)
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchActive = false;
+
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchActive = true;
+      stopAutoPlay();
+    }
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    if (!touchActive) return;
+    touchActive = false;
+
+    if (e.changedTouches.length > 0) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Threshold: 35px horizontal swipe
+      if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          nextSlide(); // Swiped left -> next
+        } else {
+          prevSlide(); // Swiped right -> prev
+        }
+      }
+    }
+    startAutoPlay();
+  }, { passive: true });
+
+  // Mouse drag support for desktop
+  let mouseStartX = 0;
+  let isMouseDown = false;
+
+  container.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    mouseStartX = e.clientX;
+    stopAutoPlay();
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isMouseDown) return;
+    isMouseDown = false;
+    const diffX = e.clientX - mouseStartX;
+    if (Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    startAutoPlay();
+  });
+
+  // Pause when browser tab is inactive to preserve performance
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  // Start initial auto-play
+  startAutoPlay();
 }
