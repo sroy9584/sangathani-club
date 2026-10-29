@@ -507,7 +507,7 @@ ol {
   font-family: var(--font-sans);
   font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--crimson);
   font-weight: 700;
   white-space: nowrap;
