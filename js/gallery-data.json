@@ -201,32 +201,52 @@
   },
   {
     "id": 21,
-    "filename": "sangathani-kali-puja-2025-01.jpg",
-    "src": "Photos/gallery/sangathani-kali-puja-2025-01.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-21.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 21",
-    "category": "kali",
-    "year": "2025",
-    "tileType": "tile-hero"
+    "filename": "sangathani-heritage-archives-01.jpg",
+    "src": "Photos/gallery/sangathani-heritage-archives-01.jpg",
+    "downloadName": "sangathani-club-heritage-archives-21.jpg",
+    "caption": "Heritage Archives · Vintage Durga Puja Pratima Craftsmanship",
+    "category": "durga",
+    "year": "archives",
+    "tileType": "tile-wide"
   },
   {
     "id": 22,
+    "filename": "sangathani-heritage-archives-02.jpg",
+    "src": "Photos/gallery/sangathani-heritage-archives-02.jpg",
+    "downloadName": "sangathani-club-heritage-archives-22.jpg",
+    "caption": "Heritage Archives · Handcrafted Golden Jute Durga Pratima",
+    "category": "durga",
+    "year": "archives",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 23,
+    "filename": "sangathani-kali-puja-2025-01.jpg",
+    "src": "Photos/gallery/sangathani-kali-puja-2025-01.jpg",
+    "downloadName": "sangathani-club-kali-puja-2025-23.jpg",
+    "caption": "Shyama Kali Puja 2025 · Divine Pratima & Mandap",
+    "category": "kali",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 24,
     "filename": "sangathani-kali-puja-2025-02.jpg",
     "src": "Photos/gallery/sangathani-kali-puja-2025-02.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-22.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 22",
+    "downloadName": "sangathani-club-kali-puja-2025-24.jpg",
+    "caption": "Shyama Kali Puja 2025 · Deepavali Lighting & Mandap View",
     "category": "kali",
     "year": "2025",
     "tileType": "tile-tall"
   },
   {
-    "id": 23,
+    "id": 25,
     "filename": "sangathani-kali-puja-2025-03.jpg",
     "src": "Photos/gallery/sangathani-kali-puja-2025-03.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-23.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 23",
+    "downloadName": "sangathani-club-kali-puja-2025-25.jpg",
+    "caption": "Shyama Kali Puja 2025 · Deepavali Lighting & Mandap View",
     "category": "kali",
     "year": "2025",
-    "tileType": "tile-square"
+    "tileType": "tile-wide"
   }
 ]

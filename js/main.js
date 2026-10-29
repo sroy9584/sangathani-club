@@ -313,33 +313,53 @@ const DEFAULT_GALLERY_PHOTOS = [
   },
   {
     "id": 21,
-    "filename": "sangathani-kali-puja-2025-01.jpg",
-    "src": "Photos/gallery/sangathani-kali-puja-2025-01.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-21.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 21",
-    "category": "kali",
-    "year": "2025",
-    "tileType": "tile-hero"
+    "filename": "sangathani-heritage-archives-01.jpg",
+    "src": "Photos/gallery/sangathani-heritage-archives-01.jpg",
+    "downloadName": "sangathani-club-heritage-archives-21.jpg",
+    "caption": "Heritage Archives · Vintage Durga Puja Pratima Craftsmanship",
+    "category": "durga",
+    "year": "archives",
+    "tileType": "tile-wide"
   },
   {
     "id": 22,
+    "filename": "sangathani-heritage-archives-02.jpg",
+    "src": "Photos/gallery/sangathani-heritage-archives-02.jpg",
+    "downloadName": "sangathani-club-heritage-archives-22.jpg",
+    "caption": "Heritage Archives · Handcrafted Golden Jute Durga Pratima",
+    "category": "durga",
+    "year": "archives",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 23,
+    "filename": "sangathani-kali-puja-2025-01.jpg",
+    "src": "Photos/gallery/sangathani-kali-puja-2025-01.jpg",
+    "downloadName": "sangathani-club-kali-puja-2025-23.jpg",
+    "caption": "Shyama Kali Puja 2025 · Divine Pratima & Mandap",
+    "category": "kali",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 24,
     "filename": "sangathani-kali-puja-2025-02.jpg",
     "src": "Photos/gallery/sangathani-kali-puja-2025-02.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-22.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 22",
+    "downloadName": "sangathani-club-kali-puja-2025-24.jpg",
+    "caption": "Shyama Kali Puja 2025 · Deepavali Lighting & Mandap View",
     "category": "kali",
     "year": "2025",
     "tileType": "tile-tall"
   },
   {
-    "id": 23,
+    "id": 25,
     "filename": "sangathani-kali-puja-2025-03.jpg",
     "src": "Photos/gallery/sangathani-kali-puja-2025-03.jpg",
-    "downloadName": "sangathani-club-kali-puja-2025-23.jpg",
-    "caption": "Shyama Kali Puja 2025 · Moment 23",
+    "downloadName": "sangathani-club-kali-puja-2025-25.jpg",
+    "caption": "Shyama Kali Puja 2025 · Deepavali Lighting & Mandap View",
     "category": "kali",
     "year": "2025",
-    "tileType": "tile-square"
+    "tileType": "tile-wide"
   }
 ];
 
@@ -450,8 +470,7 @@ function initGallery() {
                        (cat === activeCategory) || 
                        (activeCategory === 'durga' && cat.includes('durga'));
 
-      const yrMatch = (activeYear === 'all' || activeYear === 'archives') || 
-                      (yr === activeYear);
+      const yrMatch = (activeYear === 'all') || (yr === activeYear);
 
       return catMatch && yrMatch;
     });
@@ -462,7 +481,7 @@ function initGallery() {
       tile.style.display = 'none';
     });
 
-    // If All Memories is selected, shuffle items across sections!
+    // If All Memories is selected (with all years or filtered), shuffle items across sections!
     if (activeCategory === 'all') {
       matchedTiles = shuffleAllMemories(matchedTiles);
     } else {
@@ -546,8 +565,15 @@ function initGallery() {
       tile.dataset.download = item.downloadName;
       tile.dataset.caption = item.caption;
 
-      const badgeText = item.category === 'kali' ? 'Kali Puja 2025' : 'Durga Puja 2026';
-      const badgeStyle = item.category === 'kali' ? 'style="background: rgba(230, 57, 70, 0.9);"' : '';
+      let badgeText = 'Durga Puja 2026';
+      let badgeStyle = '';
+      if (item.year === 'archives') {
+        badgeText = 'Heritage Archives';
+        badgeStyle = 'style="background: rgba(184, 134, 11, 0.95);"';
+      } else if (item.category === 'kali') {
+        badgeText = 'Kali Puja 2025';
+        badgeStyle = 'style="background: rgba(230, 57, 70, 0.9);"';
+      }
 
       tile.innerHTML = `
         <img src="${item.src}" alt="${item.caption}" loading="lazy" />
@@ -615,6 +641,12 @@ function initGallery() {
 
       activeCategory = btn.getAttribute('data-filter') || 'all';
 
+      // If user clicks All Memories, show all years as well
+      if (activeCategory === 'all') {
+        activeYear = 'all';
+        yearBtns.forEach(b => b.classList.remove('active'));
+      }
+
       // Reset expand state on filter change
       isExpanded = false;
       if (expandBtn) {
@@ -629,10 +661,17 @@ function initGallery() {
   // Year filter handlers (STRICT: NO AUTO-SWITCHING CATEGORY)
   yearBtns.forEach(btn => {
     btn.onclick = () => {
-      yearBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      const yr = btn.getAttribute('data-year-filter');
 
-      activeYear = btn.getAttribute('data-year-filter') || 'all';
+      // If clicking an already active year button, toggle back to all years
+      if (btn.classList.contains('active')) {
+        btn.classList.remove('active');
+        activeYear = 'all';
+      } else {
+        yearBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeYear = yr;
+      }
 
       // Reset expand state on filter change
       isExpanded = false;
@@ -648,7 +687,6 @@ function initGallery() {
   // Initial filter run on page load
   applyFilters();
 }
-
 
 /* ==========================================================================
    5. FULLSCREEN IMMERSIVE LIGHTBOX & DOWNLOAD ACTIONS
@@ -673,7 +711,6 @@ function openLightbox(index, list) {
   const captionText = document.getElementById('lightbox-caption-text');
   const downloadBtn = document.getElementById('lightbox-download-btn');
 
-  // Format index string (e.g. 01 / 03)
   const currentNumStr = String(currentLightboxIndex + 1).padStart(2, '0');
   const totalNumStr = String(total).padStart(2, '0');
 
@@ -694,7 +731,6 @@ function openLightbox(index, list) {
     captionText.textContent = caption;
   }
 
-  // Download Action - Direct file download with safe filename
   if (downloadBtn) {
     downloadBtn.href = src;
     downloadBtn.download = downloadName;
@@ -704,7 +740,6 @@ function openLightbox(index, list) {
   lightbox.classList.add('active');
   document.body.classList.add('lightbox-open');
 
-  // Focus close button inside lightbox for keyboard navigation
   const closeBtn = document.getElementById('lightbox-close-btn');
   if (closeBtn) closeBtn.focus();
 }
@@ -716,7 +751,6 @@ function closeLightbox() {
   lightbox.classList.remove('active');
   document.body.classList.remove('lightbox-open');
 
-  // Return focus to previously active gallery trigger element
   if (lastActiveGalleryTrigger && typeof lastActiveGalleryTrigger.focus === 'function') {
     lastActiveGalleryTrigger.focus();
   }
@@ -742,14 +776,12 @@ function initLightbox() {
   if (nextBtn) nextBtn.onclick = nextLightboxImage;
   if (prevBtn) prevBtn.onclick = prevLightboxImage;
 
-  // Click outside image stage to close
   lightbox.onclick = (e) => {
     if (e.target === lightbox || e.target.classList.contains('lightbox-viewport') || e.target.classList.contains('lightbox-stage')) {
       closeLightbox();
     }
   };
 
-  // Keyboard navigation: Escape closes, Left/Right arrow keys navigate
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
 
@@ -765,7 +797,6 @@ function initLightbox() {
     }
   });
 
-  // Touch Swipe navigation for mobile
   let touchStartX = 0;
   let touchStartY = 0;
 
@@ -782,9 +813,9 @@ function initLightbox() {
 
     if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
       if (diffX < 0) {
-        nextLightboxImage(); // Swipe left to see next
+        nextLightboxImage();
       } else {
-        prevLightboxImage(); // Swipe right to see previous
+        prevLightboxImage();
       }
     }
   }, { passive: true });

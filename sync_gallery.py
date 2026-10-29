@@ -1,6 +1,6 @@
 """
 Sangathani Club - Multi-Event Gallery Synchronizer
-Scans Photos/gallery/ and registers Durga Puja, Kali Puja, and Cultural photos.
+Scans Photos/gallery/ and registers Durga Puja, Kali Puja, and Heritage Archive photos.
 """
 
 import os
@@ -35,10 +35,28 @@ def sync_gallery():
         tile_type = rhythms[idx % len(rhythms)]
         ext = os.path.splitext(filename)[1].lower()
 
-        if "kali" in filename.lower():
+        if "archives" in filename.lower():
+            category = "durga"
+            year = "archives"
+            if "01" in filename:
+                caption = "Heritage Archives · Vintage Durga Puja Pratima Craftsmanship"
+            elif "02" in filename:
+                caption = "Heritage Archives · Handcrafted Golden Jute Durga Pratima"
+            else:
+                caption = f"Heritage Archives · Historical Pratima {num:02d}"
+            download_name = f"sangathani-club-heritage-archives-{num:02d}{ext}"
+            tile_type = "tile-wide"
+        elif "kali" in filename.lower():
             category = "kali"
             year = "2025"
-            caption = f"Shyama Kali Puja 2025 · Moment {num:02d}"
+            if "01" in filename:
+                caption = "Shyama Kali Puja 2025 · Divine Pratima & Mandap"
+            elif "02" in filename:
+                caption = "Shyama Kali Puja 2025 · Deepavali Lighting & Mandap View"
+            elif "03" in filename:
+                caption = "Shyama Kali Puja 2025 · Midnight Puja & Altar Devotion"
+            else:
+                caption = f"Shyama Kali Puja 2025 · Moment {num:02d}"
             download_name = f"sangathani-club-kali-puja-2025-{num:02d}{ext}"
         else:
             category = "durga"
