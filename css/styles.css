@@ -3411,3 +3411,70 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================================================
+   PARTICIPATE & GET INVOLVED SECTION
+   ========================================================================== */
+.participate-section {
+  position: relative;
+}
+
+.participate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.participate-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-xl);
+  padding: 34px 28px;
+  box-shadow: var(--glass-inner-shadow), 0 14px 36px rgba(20, 12, 16, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.participate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(242, 29, 47, 0.12);
+  border-color: rgba(242, 29, 47, 0.3);
+}
+
+.participate-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 18px;
+}
+
+.participate-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 10px 0 8px;
+  line-height: 1.25;
+}
+
+.participate-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+@media (max-width: 992px) {
+  .participate-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
