@@ -108,143 +108,849 @@ function initCountdown() {
 }
 
 /* ==========================================================================
-   4. YEAR-WISE PHOTO GALLERY & FILTERING
+   4. YEAR-WISE PHOTO GALLERY & EDITORIAL MASONRY (Durga Puja 2026)
    ========================================================================== */
-function initGallery() {
+const DEFAULT_GALLERY_PHOTOS = [
+  {
+    "id": 1,
+    "filename": "sangathani-durga-puja-2026-01.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-01.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-01.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 01",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 2,
+    "filename": "sangathani-durga-puja-2026-02.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-02.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-02.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 02",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 3,
+    "filename": "sangathani-durga-puja-2026-03.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-03.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-03.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 03",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 4,
+    "filename": "sangathani-durga-puja-2026-04.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-04.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-04.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 04",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 5,
+    "filename": "sangathani-durga-puja-2026-05.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-05.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-05.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 05",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 6,
+    "filename": "sangathani-durga-puja-2026-06.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-06.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-06.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 06",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 7,
+    "filename": "sangathani-durga-puja-2026-07.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-07.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-07.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 07",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 8,
+    "filename": "sangathani-durga-puja-2026-08.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-08.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-08.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 08",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 9,
+    "filename": "sangathani-durga-puja-2026-09.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-09.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-09.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 09",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 10,
+    "filename": "sangathani-durga-puja-2026-10.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-10.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-10.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 10",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 11,
+    "filename": "sangathani-durga-puja-2026-11.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-11.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-11.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 11",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 12,
+    "filename": "sangathani-durga-puja-2026-12.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-12.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-12.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 12",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 13,
+    "filename": "sangathani-durga-puja-2026-13.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-13.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-13.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 13",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 14,
+    "filename": "sangathani-durga-puja-2026-14.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-14.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-14.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 14",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 15,
+    "filename": "sangathani-durga-puja-2026-15.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-15.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-15.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 15",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 16,
+    "filename": "sangathani-durga-puja-2026-16.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-16.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-16.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 16",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 17,
+    "filename": "sangathani-durga-puja-2026-17.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-17.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-17.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 17",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 18,
+    "filename": "sangathani-durga-puja-2026-18.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-18.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-18.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 18",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 19,
+    "filename": "sangathani-durga-puja-2026-19.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-19.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-19.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 19",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 20,
+    "filename": "sangathani-durga-puja-2026-20.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-20.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-20.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 20",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 21,
+    "filename": "sangathani-durga-puja-2026-21.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-21.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-21.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 21",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 22,
+    "filename": "sangathani-durga-puja-2026-22.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-22.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-22.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 22",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 23,
+    "filename": "sangathani-durga-puja-2026-23.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-23.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-23.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 23",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 24,
+    "filename": "sangathani-durga-puja-2026-24.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-24.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-24.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 24",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 25,
+    "filename": "sangathani-durga-puja-2026-25.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-25.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-25.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 25",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 26,
+    "filename": "sangathani-durga-puja-2026-26.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-26.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-26.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 26",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 27,
+    "filename": "sangathani-durga-puja-2026-27.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-27.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-27.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 27",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 28,
+    "filename": "sangathani-durga-puja-2026-28.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-28.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-28.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 28",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 29,
+    "filename": "sangathani-durga-puja-2026-29.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-29.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-29.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 29",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 30,
+    "filename": "sangathani-durga-puja-2026-30.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-30.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-30.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 30",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 31,
+    "filename": "sangathani-durga-puja-2026-31.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-31.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-31.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 31",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 32,
+    "filename": "sangathani-durga-puja-2026-32.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-32.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-32.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 32",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 33,
+    "filename": "sangathani-durga-puja-2026-33.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-33.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-33.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 33",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 34,
+    "filename": "sangathani-durga-puja-2026-34.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-34.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-34.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 34",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 35,
+    "filename": "sangathani-durga-puja-2026-35.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-35.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-35.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 35",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 36,
+    "filename": "sangathani-durga-puja-2026-36.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-36.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-36.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 36",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 37,
+    "filename": "sangathani-durga-puja-2026-37.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-37.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-37.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 37",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 38,
+    "filename": "sangathani-durga-puja-2026-38.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-38.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-38.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 38",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 39,
+    "filename": "sangathani-durga-puja-2026-39.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-39.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-39.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 39",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 40,
+    "filename": "sangathani-durga-puja-2026-40.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-40.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-40.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 40",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 41,
+    "filename": "sangathani-durga-puja-2026-41.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-41.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-41.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 41",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 42,
+    "filename": "sangathani-durga-puja-2026-42.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-42.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-42.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 42",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 43,
+    "filename": "sangathani-durga-puja-2026-43.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-43.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-43.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 43",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 44,
+    "filename": "sangathani-durga-puja-2026-44.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-44.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-44.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 44",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 45,
+    "filename": "sangathani-durga-puja-2026-45.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-45.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-45.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 45",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 46,
+    "filename": "sangathani-durga-puja-2026-46.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-46.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-46.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 46",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 47,
+    "filename": "sangathani-durga-puja-2026-47.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-47.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-47.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 47",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 48,
+    "filename": "sangathani-durga-puja-2026-48.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-48.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-48.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 48",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 49,
+    "filename": "sangathani-durga-puja-2026-49.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-49.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-49.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 49",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 50,
+    "filename": "sangathani-durga-puja-2026-50.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-50.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-50.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 50",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 51,
+    "filename": "sangathani-durga-puja-2026-51.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-51.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-51.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 51",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 52,
+    "filename": "sangathani-durga-puja-2026-52.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-52.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-52.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 52",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 53,
+    "filename": "sangathani-durga-puja-2026-53.jpg",
+    "src": "Photos/gallery/sangathani-durga-puja-2026-53.jpg",
+    "downloadName": "sangathani-club-durga-puja-2026-53.jpg",
+    "caption": "Durga Puja 2026 \u00b7 Moment 53",
+    "category": "durga-2026",
+    "year": "2026",
+    "tileType": "tile-square"
+  }
+];
+
+let galleryItems = DEFAULT_GALLERY_PHOTOS;
+let visibleGalleryItems = [];
+let currentLightboxIndex = 0;
+let lastActiveGalleryTrigger = null;
+
+async function initGallery() {
+  const masonryGrid = document.getElementById('gallery-masonry');
+  const expandContainer = document.getElementById('gallery-expand-container');
+  const expandBtn = document.getElementById('gallery-expand-btn');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const yearBtns = document.querySelectorAll('.year-btn');
-  const cards = document.querySelectorAll('.gallery-photo-card');
 
-  let activeCategory = 'all';
-  let activeYear = 'all';
+  let activeCategory = 'durga-2026';
+  let activeYear = '2026';
+  let isExpanded = false;
+  const PREVIEW_LIMIT = 12;
 
-  function filterCards() {
-    cards.forEach(card => {
-      const cardCategory = card.getAttribute('data-category');
-      const cardYear = card.getAttribute('data-year');
+  // Try refreshing verified photo metadata from js/gallery-data.json
+  try {
+    const response = await fetch('js/gallery-data.json', { cache: 'no-cache' });
+    if (response.ok) {
+      const fetched = await response.json();
+      if (Array.isArray(fetched) && fetched.length > 0) {
+        galleryItems = fetched;
+      }
+    }
+  } catch (err) {
+    console.info('Using pre-bundled gallery items:', err);
+  }
 
-      const matchesCat = (activeCategory === 'all' || cardCategory === activeCategory);
-      const matchesYear = (activeYear === 'all' || cardYear === activeYear);
+  // Render or update masonry grid
+  function renderGallery() {
+    if (!masonryGrid) return;
 
-      if (matchesCat && matchesYear) {
-        card.style.display = 'block';
-        card.style.opacity = '1';
-        card.style.transform = 'scale(1)';
-      } else {
-        card.style.opacity = '0';
-        card.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-          if (card.style.opacity === '0') {
-            card.style.display = 'none';
+    // Filter items according to active category & year
+    visibleGalleryItems = galleryItems.filter(item => {
+      const matchCat = (activeCategory === 'all' || item.category === activeCategory);
+      const matchYr = (activeYear === 'all' || item.year === activeYear);
+      return matchCat && matchYr;
+    });
+
+    masonryGrid.innerHTML = '';
+
+    if (!visibleGalleryItems.length) {
+      masonryGrid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-secondary); font-weight: 600;">No photos available in this collection.</div>';
+      if (expandContainer) expandContainer.style.display = 'none';
+      return;
+    }
+
+    // Rhythm of editorial tile classes
+    const tilePatterns = ['tile-hero', 'tile-tall', 'tile-square', 'tile-wide', 'tile-square', 'tile-tall', 'tile-wide', 'tile-square', 'tile-hero', 'tile-square', 'tile-wide', 'tile-tall'];
+
+    visibleGalleryItems.forEach((item, index) => {
+      const tile = document.createElement('div');
+      const patternClass = item.tileType || tilePatterns[index % tilePatterns.length];
+      const isHidden = !isExpanded && index >= PREVIEW_LIMIT;
+
+      tile.className = `gallery-tile ${patternClass} ${isHidden ? 'tile-hidden' : ''}`;
+      tile.setAttribute('role', 'button');
+      tile.setAttribute('tabindex', '0');
+      tile.setAttribute('aria-label', `View photo: ${item.caption || 'Durga Puja 2026 moment'}`);
+      tile.dataset.index = index;
+
+      tile.innerHTML = `
+        <img src="${item.src}" alt="${item.caption || 'Sangathani Club Durga Puja 2026 Photo'}" loading="lazy" />
+        <div class="gallery-tile-overlay">
+          <div class="tile-top-bar">
+            <span class="tile-view-pill">
+              <i class="fa-solid fa-expand"></i> View photo
+            </span>
+          </div>
+          <div class="tile-bottom-bar">
+            <span class="tile-badge">Durga Puja 2026</span>
+            <div class="tile-caption">${item.caption || 'Captured Moment'}</div>
+          </div>
+        </div>
+      `;
+
+      // Open Lightbox on click or Enter key
+      tile.addEventListener('click', () => {
+        lastActiveGalleryTrigger = tile;
+        openLightbox(index);
+      });
+
+      tile.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          lastActiveGalleryTrigger = tile;
+          openLightbox(index);
+        }
+      });
+
+      masonryGrid.appendChild(tile);
+    });
+
+    // Expand / Collapse controls
+    if (visibleGalleryItems.length > PREVIEW_LIMIT) {
+      if (expandContainer) expandContainer.style.display = 'flex';
+      updateExpandButton();
+    } else {
+      if (expandContainer) expandContainer.style.display = 'none';
+    }
+  }
+
+  function updateExpandButton() {
+    if (!expandBtn) return;
+    const btnText = expandBtn.querySelector('.expand-btn-text');
+    if (isExpanded) {
+      if (btnText) btnText.textContent = 'Back to Highlights (Show Less)';
+      expandBtn.classList.add('expanded');
+      expandBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      if (btnText) btnText.textContent = `Show All Photos (${visibleGalleryItems.length} Photos)`;
+      expandBtn.classList.remove('expanded');
+      expandBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  if (expandBtn) {
+    expandBtn.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
+      allTiles.forEach((tile, idx) => {
+        if (idx >= PREVIEW_LIMIT) {
+          if (isExpanded) {
+            tile.classList.remove('tile-hidden');
+            tile.classList.add('tile-revealed');
+          } else {
+            tile.classList.add('tile-hidden');
+            tile.classList.remove('tile-revealed');
           }
-        }, 200);
+        }
+      });
+      updateExpandButton();
+
+      if (!isExpanded) {
+        masonryGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
 
+  // Filter category selection
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       activeCategory = btn.getAttribute('data-filter');
-      filterCards();
+      isExpanded = false;
+      renderGallery();
     });
   });
 
+  // Year filter selection
   yearBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       yearBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeYear = btn.getAttribute('data-year-filter');
-      filterCards();
+      isExpanded = false;
+      renderGallery();
     });
   });
+
+  // Initial render
+  renderGallery();
 }
 
 /* ==========================================================================
-   5. LIGHTBOX MODAL
+   5. FULLSCREEN IMMERSIVE LIGHTBOX & DOWNLOAD ACTIONS
    ========================================================================== */
-let currentLightboxIndex = 0;
-let visibleGalleryCards = [];
+function openLightbox(index) {
+  const lightbox = document.getElementById('lightbox-modal');
+  if (!lightbox || !visibleGalleryItems.length) return;
+
+  currentLightboxIndex = (index + visibleGalleryItems.length) % visibleGalleryItems.length;
+  const currentItem = visibleGalleryItems[currentLightboxIndex];
+
+  const mainImg = document.getElementById('lightbox-main-img');
+  const counter = document.getElementById('lightbox-counter');
+  const captionText = document.getElementById('lightbox-caption-text');
+  const downloadBtn = document.getElementById('lightbox-download-btn');
+
+  // Format index string (e.g. 07 / 53)
+  const currentNumStr = String(currentLightboxIndex + 1).padStart(2, '0');
+  const totalNumStr = String(visibleGalleryItems.length).padStart(2, '0');
+
+  if (counter) {
+    counter.textContent = `${currentNumStr} / ${totalNumStr}`;
+  }
+
+  if (mainImg) {
+    mainImg.style.opacity = '0.5';
+    mainImg.src = currentItem.src;
+    mainImg.alt = currentItem.caption || 'Sangathani Club Durga Puja 2026';
+    mainImg.onload = () => {
+      mainImg.style.opacity = '1';
+    };
+  }
+
+  if (captionText) {
+    captionText.textContent = currentItem.caption || `Durga Puja 2026 · Moment ${currentNumStr}`;
+  }
+
+  // Download Action
+  if (downloadBtn) {
+    const extMatch = currentItem.src.match(/\.[a-zA-Z0-9]+$/);
+    const ext = extMatch ? extMatch[0] : '.jpg';
+    const safeFilename = currentItem.downloadName || `sangathani-club-durga-puja-2026-${currentNumStr}${ext}`;
+
+    downloadBtn.href = currentItem.src;
+    downloadBtn.download = safeFilename;
+    downloadBtn.style.display = 'inline-flex';
+  }
+
+  lightbox.classList.add('active');
+  document.body.classList.add('lightbox-open');
+
+  // Focus close button inside lightbox for accessibility
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox-modal');
+  if (!lightbox) return;
+
+  lightbox.classList.remove('active');
+  document.body.classList.remove('lightbox-open');
+
+  // Return focus to previously active gallery trigger element
+  if (lastActiveGalleryTrigger && typeof lastActiveGalleryTrigger.focus === 'function') {
+    lastActiveGalleryTrigger.focus();
+  }
+}
+
+function nextLightboxImage() {
+  if (!visibleGalleryItems.length) return;
+  openLightbox(currentLightboxIndex + 1);
+}
+
+function prevLightboxImage() {
+  if (!visibleGalleryItems.length) return;
+  openLightbox(currentLightboxIndex - 1);
+}
 
 function initLightbox() {
   const lightbox = document.getElementById('lightbox-modal');
   if (!lightbox) return;
 
-  const lightboxImg = lightbox.querySelector('.lightbox-img');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption-text');
-  const closeBtn = lightbox.querySelector('.lightbox-close');
-  const prevBtn = lightbox.querySelector('.lightbox-prev');
-  const nextBtn = lightbox.querySelector('.lightbox-next');
-
-  function openLightbox(index) {
-    visibleGalleryCards = Array.from(document.querySelectorAll('.gallery-photo-card'))
-      .filter(card => window.getComputedStyle(card).display !== 'none');
-
-    if (!visibleGalleryCards.length) return;
-    currentLightboxIndex = index;
-
-    const targetCard = visibleGalleryCards[currentLightboxIndex];
-    const img = targetCard.querySelector('img');
-    const caption = targetCard.querySelector('.photo-caption');
-    const badge = targetCard.querySelector('.photo-badge');
-
-    if (img && lightboxImg) {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || 'Sangathani Gallery Image';
-    }
-
-    if (lightboxCaption) {
-      const tag = badge ? `[${badge.innerText}] ` : '';
-      lightboxCaption.innerText = tag + (caption ? caption.innerText : '');
-    }
-
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function nextImage() {
-    if (!visibleGalleryCards.length) return;
-    currentLightboxIndex = (currentLightboxIndex + 1) % visibleGalleryCards.length;
-    openLightbox(currentLightboxIndex);
-  }
-
-  function prevImage() {
-    if (!visibleGalleryCards.length) return;
-    currentLightboxIndex = (currentLightboxIndex - 1 + visibleGalleryCards.length) % visibleGalleryCards.length;
-    openLightbox(currentLightboxIndex);
-  }
-
-  // Attach card click handlers
-  const allCards = document.querySelectorAll('.gallery-photo-card');
-  allCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      visibleGalleryCards = Array.from(document.querySelectorAll('.gallery-photo-card'))
-        .filter(c => window.getComputedStyle(c).display !== 'none');
-      const idx = visibleGalleryCards.indexOf(card);
-      if (idx !== -1) openLightbox(idx);
-    });
-  });
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  const prevBtn = document.getElementById('lightbox-prev-btn');
+  const nextBtn = document.getElementById('lightbox-next-btn');
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  if (nextBtn) nextBtn.addEventListener('click', nextImage);
-  if (prevBtn) prevBtn.addEventListener('click', prevImage);
+  if (nextBtn) nextBtn.addEventListener('click', nextLightboxImage);
+  if (prevBtn) prevBtn.addEventListener('click', prevLightboxImage);
 
+  // Click outside image stage to close
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target === lightbox || e.target.classList.contains('lightbox-viewport') || e.target.classList.contains('lightbox-stage')) {
+      closeLightbox();
+    }
   });
 
+  // Keyboard navigation: Escape closes, Left/Right arrow keys navigate
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextLightboxImage();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevLightboxImage();
+    }
   });
+
+  // Touch Swipe navigation for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Detect horizontal swipe if deltaX is sufficiently greater than deltaY
+    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) {
+        nextLightboxImage(); // Swipe left to see next
+      } else {
+        prevLightboxImage(); // Swipe right to see previous
+      }
+    }
+  }, { passive: true });
 }
 
 /* ==========================================================================

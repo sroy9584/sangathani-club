@@ -900,121 +900,60 @@
     </section>
 
     <!-- ==========================================================================
-         10. YEAR-WISE PHOTO GALLERY (Filterable & Interactive Lightbox)
+         10. DURGA PUJA 2026 GALLERY (Editorial Masonry & Fullscreen Lightbox)
          ========================================================================== -->
-    <section id="gallery" class="section">
+    <section id="gallery" class="section gallery-section">
       <div class="container">
         <div class="section-header split">
           <div>
             <span class="eyebrow-pill">
-              <i class="fa-solid fa-camera-retro"></i> Captured Moments
+              <i class="fa-solid fa-camera-retro"></i> Captured Moments · 2026
             </span>
-            <h2 class="section-title">Memories Through the Lens</h2>
-            <p class="section-subtitle">A visual chronicle of festive splendor, timeless art, and heartwarming
-              fellowship.</p>
+            <h2 class="section-title">71st Durga Puja Through the Lens</h2>
+            <p class="section-subtitle">
+              A living archive of devotion, craft, celebration, and community at Sangathani Club.
+            </p>
           </div>
+
+          <!-- Collection Highlight Badge -->
+          <div class="gallery-collection-pill">
+            <span class="collection-dot"></span>
+            <span class="collection-name">Collection: Durga Puja 2026</span>
+          </div>
+        </div>
+
+        <!-- Filter Controls Bar with Dedicated Durga Puja 2026 Collection -->
+        <div class="gallery-controls-bar">
+          <div class="gallery-filters" role="tablist" aria-label="Photo Collections">
+            <button class="filter-btn active" data-filter="durga-2026" role="tab" aria-selected="true">
+              <i class="fa-solid fa-om"></i> Durga Puja 2026
+            </button>
+            <button class="filter-btn" data-filter="all" role="tab" aria-selected="false">All Memories</button>
+            <button class="filter-btn" data-filter="kali" role="tab" aria-selected="false">Kali Puja</button>
+            <button class="filter-btn" data-filter="cultural" role="tab" aria-selected="false">Cultural Program</button>
+            <button class="filter-btn" data-filter="blood" role="tab" aria-selected="false">Blood Donation</button>
+            <button class="filter-btn" data-filter="community" role="tab" aria-selected="false">Community Events</button>
+          </div>
+
           <div class="year-selector-timeline">
-            <button class="year-btn active" data-year-filter="all">All Years</button>
-            <button class="year-btn" data-year-filter="2026">2026</button>
+            <button class="year-btn active" data-year-filter="2026">2026</button>
             <button class="year-btn" data-year-filter="2025">2025</button>
             <button class="year-btn" data-year-filter="2024">2024</button>
-            <button class="year-btn" data-year-filter="earlier">Archive</button>
+            <button class="year-btn" data-year-filter="all">All Years</button>
           </div>
         </div>
 
-        <!-- Filter Buttons Bar -->
-        <div class="gallery-controls-bar">
-          <div class="gallery-filters">
-            <button class="filter-btn active" data-filter="all">All Memories</button>
-            <button class="filter-btn" data-filter="durga">Durga Puja</button>
-            <button class="filter-btn" data-filter="kali">Kali Puja</button>
-            <button class="filter-btn" data-filter="cultural">Cultural Program</button>
-            <button class="filter-btn" data-filter="blood">Blood Donation</button>
-            <button class="filter-btn" data-filter="community">Community Events</button>
-          </div>
+        <!-- Dynamic Editorial Masonry Grid (Rendered by JS with actual 53 photos) -->
+        <div id="gallery-masonry" class="gallery-masonry-grid" aria-live="polite">
+          <!-- Populated dynamically with varied hero, portrait, landscape, and square tiles -->
         </div>
 
-        <!-- Masonry / Editorial Collage Grid -->
-        <div class="gallery-masonry-grid">
-          <!-- Item 1: Durga Pratima (Span H2) -->
-          <div class="gallery-photo-card gallery-span-h2" data-category="durga" data-year="2025">
-            <img src="https://images.unsplash.com/photo-1602498456745-e9503b30470b?auto=format&fit=crop&w=800&q=80"
-              alt="Maa Durga Pratima at Sangathani">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Durga Puja · 2025</span>
-              <div class="photo-caption">Divine Radiance: The Sacred Face of Maa Durga</div>
-            </div>
-          </div>
-
-          <!-- Item 2: Dhunuchi Fire (Span W2) -->
-          <div class="gallery-photo-card gallery-span-w2" data-category="durga" data-year="2025">
-            <img src="https://images.unsplash.com/photo-1571216332002-282dce467b32?auto=format&fit=crop&w=800&q=80"
-              alt="Dhunuchi Dance Smoke and Rhythms">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Dhunuchi Naach · 2025</span>
-              <div class="photo-caption">Ashtami Dhunuchi Whirl to Resounding Dhaks</div>
-            </div>
-          </div>
-
-          <!-- Item 3: Artisan Hands (Span 1) -->
-          <div class="gallery-photo-card" data-category="durga" data-year="2026">
-            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80"
-              alt="Clay Artisan at Work">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Theme Preview · 2026</span>
-              <div class="photo-caption">Mritshilpi: Shaping Divine Clay in Kumartuli</div>
-            </div>
-          </div>
-
-          <!-- Item 4: Classical Dance (Span 1) -->
-          <div class="gallery-photo-card" data-category="cultural" data-year="2025">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
-              alt="Odissi Classical Dancer on Stage">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Cultural Soiree · 2025</span>
-              <div class="photo-caption">Classical Odissi Performance on Nabami Evening</div>
-            </div>
-          </div>
-
-          <!-- Item 5: Kali Puja Diyas (Span 1) -->
-          <div class="gallery-photo-card" data-category="kali" data-year="2024">
-            <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=800&q=80"
-              alt="Kali Puja Clay Lamps">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Kali Puja · 2024</span>
-              <div class="photo-caption">Deepotsav: Ten Thousand Diyas Illuminating the Dark</div>
-            </div>
-          </div>
-
-          <!-- Item 6: Blood Donation Camp (Span 1) -->
-          <div class="gallery-photo-card" data-category="blood" data-year="2025">
-            <img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=800&q=80"
-              alt="Blood Donation Drive">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Social Service · 2025</span>
-              <div class="photo-caption">Annual Blood Donation Camp with Central Blood Bank</div>
-            </div>
-          </div>
-
-          <!-- Item 7: Sindoor Khela (Span 1) -->
-          <div class="gallery-photo-card" data-category="durga" data-year="2024">
-            <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=800&q=80"
-              alt="Sindoor Khela on Dashami">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Sindoor Khela · 2024</span>
-              <div class="photo-caption">Crimson Vermilion Bliss on Bijoya Dashami</div>
-            </div>
-          </div>
-
-          <!-- Item 8: Community Gathering (Span 1) -->
-          <div class="gallery-photo-card" data-category="community" data-year="earlier">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
-              alt="Community members gathered">
-            <div class="gallery-photo-overlay">
-              <span class="photo-badge">Heritage Archive · Earlier</span>
-              <div class="photo-caption">Neighborhood Fellowship over Bhog Feast</div>
-            </div>
-          </div>
+        <!-- Expand / Collapse Controls -->
+        <div id="gallery-expand-container" class="gallery-expand-wrapper">
+          <button id="gallery-expand-btn" class="btn btn-glass btn-gallery-expand" aria-expanded="false">
+            <span class="expand-btn-text">Show All Photos (53 Photos)</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -1509,28 +1448,44 @@
   </div>
 
   <!-- ==========================================================================
-       MODAL 4: INTERACTIVE LIGHTBOX FOR GALLERY
+       MODAL 4: FULL-SCREEN IMMERSIVE LIGHTBOX FOR GALLERY
        ========================================================================== -->
-  <div id="lightbox-modal" class="lightbox-modal">
-    <div class="lightbox-content">
-      <button class="lightbox-close" aria-label="Close Lightbox">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox" tabindex="-1">
+    <!-- Top Floating Toolbar -->
+    <div class="lightbox-top-bar">
+      <!-- Position Indicator (e.g. 07 / 53) -->
+      <div id="lightbox-counter" class="lightbox-counter" aria-label="Photo position">01 / 53</div>
 
-      <div class="lightbox-nav lightbox-prev" aria-label="Previous image">
-        <i class="fa-solid fa-chevron-left"></i>
+      <div class="lightbox-top-actions">
+        <!-- Download Action -->
+        <a id="lightbox-download-btn" class="lightbox-action-btn lightbox-download-btn" href="#" download="" title="Download Original Photo" aria-label="Download Photo">
+          <i class="fa-solid fa-download"></i>
+          <span>Download Photo</span>
+        </a>
+
+        <!-- Close Button -->
+        <button id="lightbox-close-btn" class="lightbox-action-btn lightbox-close-btn" aria-label="Close Lightbox (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
+    </div>
 
-      <div class="lightbox-img-wrapper">
-        <img src="" alt="" class="lightbox-img">
+    <!-- Navigation Arrows -->
+    <button id="lightbox-prev-btn" class="lightbox-nav-arrow lightbox-prev" aria-label="Previous Photo (Left Arrow)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="lightbox-next-btn" class="lightbox-nav-arrow lightbox-next" aria-label="Next Photo (Right Arrow)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Main Image Centered Viewport -->
+    <div class="lightbox-viewport">
+      <div class="lightbox-stage">
+        <img id="lightbox-main-img" src="" alt="" class="lightbox-main-img">
       </div>
-
-      <div class="lightbox-nav lightbox-next" aria-label="Next image">
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
-
-      <div class="lightbox-caption-bar">
-        <span class="lightbox-caption-text"></span>
+      <div class="lightbox-caption-wrapper">
+        <div id="lightbox-caption-text" class="lightbox-caption-text"></div>
+        <div class="lightbox-caption-meta">71st Durga Puja 2026 · Sangathani Club Archive</div>
       </div>
     </div>
   </div>
