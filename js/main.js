@@ -64,8 +64,8 @@ function initMobileDrawer() {
    3. DURGA PUJA 2026 COUNTDOWN TIMER
    ========================================================================== */
 function initCountdown() {
-  // Durga Puja 2026 - Maha Shasthi is typically mid-October 2026 (Oct 16, 2026)
-  const targetDate = new Date('October 16, 2026 06:00:00').getTime();
+  // Durga Puja 2027 - Maha Shasthi: October 5, 2027
+  const targetDate = new Date('October 5, 2027 06:00:00').getTime();
 
   const daysEl = document.getElementById('count-days');
   const hoursEl = document.getElementById('count-hours');
