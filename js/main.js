@@ -450,7 +450,7 @@ function initGallery() {
       const filter = btn.getAttribute('data-filter');
       const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
 
-      if (filter === 'durga-2026' || filter === 'all') {
+      if (filter === 'durga-2026' || filter === 'durga' || filter === 'all') {
         allTiles.forEach((tile, idx) => {
           if (isExpanded || idx < PREVIEW_LIMIT) {
             tile.classList.remove('tile-hidden');
@@ -474,7 +474,7 @@ function initGallery() {
       const yr = btn.getAttribute('data-year-filter');
       const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
 
-      if (yr === '2026' || yr === 'all') {
+      if (yr === '2026' || yr === 'all' || yr === 'archives') {
         allTiles.forEach((tile, idx) => {
           if (isExpanded || idx < PREVIEW_LIMIT) {
             tile.classList.remove('tile-hidden');
