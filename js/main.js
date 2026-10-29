@@ -108,323 +108,143 @@ function initCountdown() {
 }
 
 /* ==========================================================================
-   4. YEAR-WISE PHOTO GALLERY & EDITORIAL MASONRY (Durga Puja 2026)
+   4. YEAR-WISE PHOTO GALLERY & FILTERING
    ========================================================================== */
-let galleryItems = [];
-let visibleGalleryItems = [];
-let currentLightboxIndex = 0;
-let lastActiveGalleryTrigger = null;
-
-async function initGallery() {
-  const masonryGrid = document.getElementById('gallery-masonry');
-  const expandContainer = document.getElementById('gallery-expand-container');
-  const expandBtn = document.getElementById('gallery-expand-btn');
-  const albumNotice = document.getElementById('gallery-album-notice');
+function initGallery() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const yearBtns = document.querySelectorAll('.year-btn');
+  const cards = document.querySelectorAll('.gallery-photo-card');
 
-  let activeCategory = 'durga-2026';
-  let activeYear = '2026';
-  let isExpanded = false;
-  const PREVIEW_LIMIT = 10;
+  let activeCategory = 'all';
+  let activeYear = 'all';
 
-  // Try loading verified photo metadata from js/gallery-data.json
-  try {
-    const response = await fetch('js/gallery-data.json', { cache: 'no-cache' });
-    if (response.ok) {
-      galleryItems = await response.json();
-    }
-  } catch (err) {
-    console.info('Gallery data loader:', err);
-    galleryItems = [];
-  }
+  function filterCards() {
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      const cardYear = card.getAttribute('data-year');
 
-  // Render or update masonry grid
-  function renderGallery() {
-    if (!masonryGrid) return;
+      const matchesCat = (activeCategory === 'all' || cardCategory === activeCategory);
+      const matchesYear = (activeYear === 'all' || cardYear === activeYear);
 
-    // Filter items according to active category & year
-    visibleGalleryItems = galleryItems.filter(item => {
-      const matchCat = (activeCategory === 'all' || item.category === activeCategory);
-      const matchYr = (activeYear === 'all' || item.year === activeYear);
-      return matchCat && matchYr;
-    });
-
-    masonryGrid.innerHTML = '';
-
-    // If no approved photos are yet imported into Photos/gallery/
-    if (!visibleGalleryItems.length) {
-      if (albumNotice) albumNotice.style.display = 'flex';
-      if (expandContainer) expandContainer.style.display = 'none';
-      return;
-    }
-
-    // Hide empty notice when approved photos are present
-    if (albumNotice) albumNotice.style.display = 'none';
-
-    // Rhythm of editorial tile classes
-    const tilePatterns = ['tile-hero', 'tile-tall', 'tile-wide', 'tile-square', 'tile-square', 'tile-tall', 'tile-wide', 'tile-square', 'tile-square', 'tile-wide'];
-
-    visibleGalleryItems.forEach((item, index) => {
-      const tile = document.createElement('div');
-      const patternClass = item.tileType || tilePatterns[index % tilePatterns.length];
-      const isHidden = !isExpanded && index >= PREVIEW_LIMIT;
-
-      tile.className = `gallery-tile ${patternClass} ${isHidden ? 'tile-hidden' : ''}`;
-      tile.setAttribute('role', 'button');
-      tile.setAttribute('tabindex', '0');
-      tile.setAttribute('aria-label', `View photo: ${item.caption || 'Durga Puja 2026 moment'}`);
-      tile.dataset.index = index;
-
-      tile.innerHTML = `
-        <img src="${item.src}" alt="${item.caption || 'Sangathani Club Durga Puja 2026 Photo'}" loading="lazy" />
-        <div class="gallery-tile-overlay">
-          <div class="tile-top-bar">
-            <span class="tile-view-pill">
-              <i class="fa-solid fa-expand"></i> View photo
-            </span>
-          </div>
-          <div class="tile-bottom-bar">
-            <span class="tile-badge">Durga Puja 2026</span>
-            <div class="tile-caption">${item.caption || 'Captured Moment'}</div>
-          </div>
-        </div>
-      `;
-
-      // Open Lightbox on click or Enter key
-      tile.addEventListener('click', () => {
-        lastActiveGalleryTrigger = tile;
-        openLightbox(index);
-      });
-
-      tile.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          lastActiveGalleryTrigger = tile;
-          openLightbox(index);
-        }
-      });
-
-      masonryGrid.appendChild(tile);
-    });
-
-    // Expand / Collapse controls
-    if (visibleGalleryItems.length > PREVIEW_LIMIT) {
-      if (expandContainer) expandContainer.style.display = 'flex';
-      updateExpandButton();
-    } else {
-      if (expandContainer) expandContainer.style.display = 'none';
-    }
-  }
-
-  function updateExpandButton() {
-    if (!expandBtn) return;
-    const btnText = expandBtn.querySelector('.expand-btn-text');
-    if (isExpanded) {
-      if (btnText) btnText.textContent = 'Back to Highlights';
-      expandBtn.classList.add('expanded');
-      expandBtn.setAttribute('aria-expanded', 'true');
-    } else {
-      if (btnText) btnText.textContent = 'Show All Photos';
-      expandBtn.classList.remove('expanded');
-      expandBtn.setAttribute('aria-expanded', 'false');
-    }
-  }
-
-  if (expandBtn) {
-    expandBtn.addEventListener('click', () => {
-      isExpanded = !isExpanded;
-      const allTiles = masonryGrid.querySelectorAll('.gallery-tile');
-      allTiles.forEach((tile, idx) => {
-        if (idx >= PREVIEW_LIMIT) {
-          if (isExpanded) {
-            tile.classList.remove('tile-hidden');
-            tile.classList.add('tile-revealed');
-          } else {
-            tile.classList.add('tile-hidden');
-            tile.classList.remove('tile-revealed');
+      if (matchesCat && matchesYear) {
+        card.style.display = 'block';
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          if (card.style.opacity === '0') {
+            card.style.display = 'none';
           }
-        }
-      });
-      updateExpandButton();
-
-      if (!isExpanded) {
-        masonryGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
       }
     });
   }
 
-  // Filter category selection
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
       activeCategory = btn.getAttribute('data-filter');
-      isExpanded = false;
-      renderGallery();
+      filterCards();
     });
   });
 
-  // Year filter selection
   yearBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       yearBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeYear = btn.getAttribute('data-year-filter');
-      isExpanded = false;
-      renderGallery();
+      filterCards();
     });
   });
-
-  // Initial render
-  renderGallery();
 }
 
 /* ==========================================================================
-   5. FULLSCREEN IMMERSIVE LIGHTBOX & DOWNLOAD ACTIONS
+   5. LIGHTBOX MODAL
    ========================================================================== */
-function openLightbox(index) {
-  const lightbox = document.getElementById('lightbox-modal');
-  if (!lightbox || !visibleGalleryItems.length) return;
-
-  currentLightboxIndex = (index + visibleGalleryItems.length) % visibleGalleryItems.length;
-  const currentItem = visibleGalleryItems[currentLightboxIndex];
-
-  const mainImg = document.getElementById('lightbox-main-img');
-  const counter = document.getElementById('lightbox-counter');
-  const captionText = document.getElementById('lightbox-caption-text');
-  const downloadBtn = document.getElementById('lightbox-download-btn');
-
-  // Format index string (e.g. 07 / 42)
-  const currentNumStr = String(currentLightboxIndex + 1).padStart(2, '0');
-  const totalNumStr = String(visibleGalleryItems.length).padStart(2, '0');
-
-  if (counter) {
-    counter.textContent = `${currentNumStr} / ${totalNumStr}`;
-  }
-
-  if (mainImg) {
-    mainImg.style.opacity = '0.5';
-    mainImg.src = currentItem.src;
-    mainImg.alt = currentItem.caption || 'Sangathani Club Durga Puja 2026';
-    mainImg.onload = () => {
-      mainImg.style.opacity = '1';
-    };
-  }
-
-  if (captionText) {
-    captionText.textContent = currentItem.caption || `Durga Puja 2026 · Moment ${currentNumStr}`;
-  }
-
-  // Strict Download Control Rule: Do NOT expose download controls for placeholder images
-  if (downloadBtn) {
-    if (currentItem && currentItem.src && !currentItem.isPlaceholder) {
-      const extMatch = currentItem.src.match(/\.[a-zA-Z0-9]+$/);
-      const ext = extMatch ? extMatch[0] : '.jpg';
-      const safeFilename = currentItem.downloadName || `sangathani-club-durga-puja-2026-${currentNumStr}${ext}`;
-
-      downloadBtn.href = currentItem.src;
-      downloadBtn.download = safeFilename;
-      downloadBtn.style.display = 'inline-flex';
-    } else {
-      downloadBtn.style.display = 'none';
-    }
-  }
-
-  lightbox.classList.add('active');
-  document.body.classList.add('lightbox-open');
-
-  // Move keyboard focus inside lightbox
-  const closeBtn = document.getElementById('lightbox-close-btn');
-  if (closeBtn) closeBtn.focus();
-}
-
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox-modal');
-  if (!lightbox) return;
-
-  lightbox.classList.remove('active');
-  document.body.classList.remove('lightbox-open');
-
-  // Return focus to previously active gallery trigger element
-  if (lastActiveGalleryTrigger && typeof lastActiveGalleryTrigger.focus === 'function') {
-    lastActiveGalleryTrigger.focus();
-  }
-}
-
-function nextLightboxImage() {
-  if (!visibleGalleryItems.length) return;
-  openLightbox(currentLightboxIndex + 1);
-}
-
-function prevLightboxImage() {
-  if (!visibleGalleryItems.length) return;
-  openLightbox(currentLightboxIndex - 1);
-}
+let currentLightboxIndex = 0;
+let visibleGalleryCards = [];
 
 function initLightbox() {
   const lightbox = document.getElementById('lightbox-modal');
   if (!lightbox) return;
 
-  const closeBtn = document.getElementById('lightbox-close-btn');
-  const prevBtn = document.getElementById('lightbox-prev-btn');
-  const nextBtn = document.getElementById('lightbox-next-btn');
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption-text');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+
+  function openLightbox(index) {
+    visibleGalleryCards = Array.from(document.querySelectorAll('.gallery-photo-card'))
+      .filter(card => window.getComputedStyle(card).display !== 'none');
+
+    if (!visibleGalleryCards.length) return;
+    currentLightboxIndex = index;
+
+    const targetCard = visibleGalleryCards[currentLightboxIndex];
+    const img = targetCard.querySelector('img');
+    const caption = targetCard.querySelector('.photo-caption');
+    const badge = targetCard.querySelector('.photo-badge');
+
+    if (img && lightboxImg) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || 'Sangathani Gallery Image';
+    }
+
+    if (lightboxCaption) {
+      const tag = badge ? `[${badge.innerText}] ` : '';
+      lightboxCaption.innerText = tag + (caption ? caption.innerText : '');
+    }
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function nextImage() {
+    if (!visibleGalleryCards.length) return;
+    currentLightboxIndex = (currentLightboxIndex + 1) % visibleGalleryCards.length;
+    openLightbox(currentLightboxIndex);
+  }
+
+  function prevImage() {
+    if (!visibleGalleryCards.length) return;
+    currentLightboxIndex = (currentLightboxIndex - 1 + visibleGalleryCards.length) % visibleGalleryCards.length;
+    openLightbox(currentLightboxIndex);
+  }
+
+  // Attach card click handlers
+  const allCards = document.querySelectorAll('.gallery-photo-card');
+  allCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      visibleGalleryCards = Array.from(document.querySelectorAll('.gallery-photo-card'))
+        .filter(c => window.getComputedStyle(c).display !== 'none');
+      const idx = visibleGalleryCards.indexOf(card);
+      if (idx !== -1) openLightbox(idx);
+    });
+  });
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  if (nextBtn) nextBtn.addEventListener('click', nextLightboxImage);
-  if (prevBtn) prevBtn.addEventListener('click', prevLightboxImage);
+  if (nextBtn) nextBtn.addEventListener('click', nextImage);
+  if (prevBtn) prevBtn.addEventListener('click', prevImage);
 
-  // Click outside image stage to close
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target.classList.contains('lightbox-viewport') || e.target.classList.contains('lightbox-stage')) {
-      closeLightbox();
-    }
+    if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation: Escape closes, Left/Right arrow keys navigate
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
-
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      closeLightbox();
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      nextLightboxImage();
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      prevLightboxImage();
-    }
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
   });
-
-  // Touch Swipe navigation for mobile
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  lightbox.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-  }, { passive: true });
-
-  lightbox.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].screenX;
-    const touchEndY = e.changedTouches[0].screenY;
-    const diffX = touchEndX - touchStartX;
-    const diffY = touchEndY - touchStartY;
-
-    // Detect horizontal swipe if deltaX is sufficiently greater than deltaY
-    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
-      if (diffX < 0) {
-        nextLightboxImage(); // Swipe left to see next
-      } else {
-        prevLightboxImage(); // Swipe right to see previous
-      }
-    }
-  }, { passive: true });
 }
 
 /* ==========================================================================
