@@ -13,7 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=3.3">
+  <link rel="stylesheet" href="css/styles.css?v=3.4">
 </head>
 
 <body>
@@ -65,45 +65,107 @@
     </div>
   </header>
 
-  <!-- Mobile Glass Drawer -->
-  <div class="mobile-drawer">
-    <div class="mobile-drawer-header">
-      <div class="brand-monogram">
-        <div class="brand-logo-frame">
-          <picture>
-            <source srcset="Photos/club-logo.webp" type="image/webp">
-            <img src="Photos/club-logo.png" alt="সংগঠনী ক্লাব প্রতীক" class="brand-logo-img">
-          </picture>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">সংগঠনী ক্লাব</span>
-          <span class="brand-tag">Ashoknagar | ESTD 1956</span>
-        </div>
+  <!-- Mobile Glass Drawer (Refined iOS Liquid-Glass Navigation) -->
+  <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-sheet">
+      <!-- Drawer Header with Brand & Close -->
+      <div class="mobile-drawer-header">
+        <a href="#home" class="brand-monogram">
+          <div class="brand-logo-frame">
+            <picture>
+              <source srcset="Photos/club-logo.webp" type="image/webp">
+              <img src="Photos/club-logo.png" alt="সংগঠনী ক্লাব প্রতীক" class="brand-logo-img">
+            </picture>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">সংগঠনী ক্লাব</span>
+            <span class="brand-tag">Ashoknagar · ESTD 1954</span>
+          </div>
+        </a>
+        <button class="drawer-close" aria-label="Close navigation menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
-      <button class="drawer-close" aria-label="Close menu">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
 
-    <div class="mobile-nav-links">
-      <a href="#home" class="mobile-nav-link">Home</a>
-      <a href="#gallery" class="mobile-nav-link">Gallery</a>
-      <a href="#durga-puja" class="mobile-nav-link">Durga Puja Theme 2027</a>
-      <a href="#cultural" class="mobile-nav-link">Cultural Program</a>
-      <a href="#social-service" class="mobile-nav-link">Social Service</a>
-      <a href="#celebrations" class="mobile-nav-link">Celebrations</a>
-      <a href="#participate" class="mobile-nav-link">Participate</a>
-      <a href="#about" class="mobile-nav-link">About Us</a>
-      <a href="#contact" class="mobile-nav-link">Contact</a>
-    </div>
+      <!-- Navigation Links Styled in Liquid-Glass iOS Cards -->
+      <div class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link active">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-house"></i></span>
+            <span>Home</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#gallery" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-images"></i></span>
+            <span>Gallery</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#durga-puja" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-om"></i></span>
+            <span>Durga Puja Theme 2027</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#cultural" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-masks-theater"></i></span>
+            <span>Cultural Program</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#social-service" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            <span>Social Service</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#celebrations" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-champagne-glasses"></i></span>
+            <span>Celebrations</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#participate" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-users"></i></span>
+            <span>Participate</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#about" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-landmark"></i></span>
+            <span>About Us</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link">
+          <span class="nav-link-left">
+            <span class="nav-icon-badge"><i class="fa-solid fa-paper-plane"></i></span>
+            <span>Contact</span>
+          </span>
+          <i class="fa-solid fa-chevron-right nav-arrow"></i>
+        </a>
+      </div>
 
-    <div class="mobile-drawer-footer">
-      <button class="btn btn-gold open-cultural-modal" style="width: 100%;">
-        <i class="fa-solid fa-masks-theater"></i> Participate in Cultural Program
-      </button>
-      <button class="btn btn-primary open-donor-modal" style="width: 100%;">
-        <i class="fa-solid fa-hand-holding-droplet"></i> Register as Blood Donor
-      </button>
+      <!-- Action Buttons Styled in Clean Liquid Glass -->
+      <div class="mobile-drawer-footer">
+        <button class="btn btn-primary open-cultural-modal" style="width: 100%;">
+          <i class="fa-solid fa-masks-theater"></i>
+          <span>Cultural Registration</span>
+        </button>
+        <button class="btn btn-glass open-donor-modal" style="width: 100%;">
+          <i class="fa-solid fa-hand-holding-droplet" style="color: var(--crimson);"></i>
+          <span>Register as Blood Donor</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1880,7 +1942,7 @@
   <div id="toast-notice" class="toast-notice"></div>
 
   <!-- Main JavaScript Engine -->
-  <script src="js/main.js?v=3.3"></script>
+  <script src="js/main.js?v=3.4"></script>
 </body>
 
 </html>
