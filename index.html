@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +16,17 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=3.9">
+  <link rel="stylesheet" href="css/styles.css?v=4.0">
+  <!-- Theme Flash Prevention: Apply saved theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('sg-theme');
+        var preferred = saved ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (preferred === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch(e) {}
+    })();
+  </script>
 </head>
 
 <body>
@@ -57,6 +67,12 @@
           <span>Contact</span>
           <i class="fa-solid fa-arrow-right-long"></i>
         </a>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+        </button>
 
         <!-- Mobile Drawer Toggle -->
         <button class="menu-toggle" aria-label="Toggle navigation menu">
@@ -2304,7 +2320,7 @@
   <div id="toast-notice" class="toast-notice"></div>
 
   <!-- Main JavaScript Engine -->
-  <script src="js/main.js?v=3.9"></script>
+  <script src="js/main.js?v=4.0"></script>
 </body>
 
 </html>

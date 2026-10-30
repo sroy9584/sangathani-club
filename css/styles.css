@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    SANGATHANI CLUB - CORE DESIGN SYSTEM & STYLESHEET
    A Contemporary Indian Cultural Identity with iOS Liquid-Glass Aesthetics
    Palette:
@@ -3912,3 +3912,606 @@ body.lightbox-open {
   margin: 0 auto;
   line-height: 1.5;
 }
+
+
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON — iOS Liquid-Glass Pill
+   ========================================================================== */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-inner-shadow), var(--glass-shadow);
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--glass-bg-hover);
+  transform: scale(1.08);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Sun icon: visible in dark mode (click to go light) */
+.theme-icon-sun {
+  display: none;
+  color: var(--gold);
+}
+
+/* Moon icon: visible in light mode (click to go dark) */
+.theme-icon-moon {
+  display: block;
+  color: var(--text-secondary);
+}
+
+/* When dark mode is active: show sun, hide moon */
+[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+/* Dark mode: style the toggle itself */
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--gold);
+  box-shadow: 0 0 12px rgba(242, 165, 22, 0.2), inset 0 1px 1px rgba(255,255,255,0.12);
+}
+
+/* ==========================================================================
+   DARK MODE — Full Site Override via [data-theme="dark"] on <html>
+   ========================================================================== */
+
+/* --- Override CSS Custom Properties --- */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-page: #0f1117;
+  --bg-card: #1a1d27;
+
+  /* Text */
+  --text-primary: #e8eaf0;
+  --text-secondary: #9ba3b8;
+  --text-muted: #636b80;
+
+  /* Borders */
+  --border-light: rgba(255, 255, 255, 0.08);
+
+  /* Light Glass → Dark Glass */
+  --glass-bg: rgba(26, 29, 39, 0.72);
+  --glass-bg-hover: rgba(35, 39, 52, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-subtle: rgba(255, 255, 255, 0.07);
+  --glass-inner-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.4), 0 4px 12px -2px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Base Body --- */
+[data-theme="dark"] body {
+  background-color: #0f1117;
+  color: #e8eaf0;
+}
+
+/* Ambient body glow (lighter in dark mode) */
+[data-theme="dark"] body::before {
+  background: radial-gradient(circle, rgba(242, 165, 22, 0.04) 0%, rgba(242, 29, 47, 0.02) 50%, transparent 70%);
+}
+[data-theme="dark"] body::after {
+  background: radial-gradient(circle, rgba(242, 29, 47, 0.03) 0%, rgba(242, 110, 34, 0.02) 60%, transparent 75%);
+}
+
+/* --- Sticky Header --- */
+[data-theme="dark"] .site-header {
+  background: transparent;
+}
+[data-theme="dark"] .nav-wrapper {
+  background: rgba(15, 17, 23, 0.72);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
+}
+[data-theme="dark"] .nav-wrapper::before {
+  background: rgba(255, 255, 255, 0.04);
+}
+[data-theme="dark"] .site-header.scrolled .nav-wrapper {
+  background: rgba(15, 17, 23, 0.9);
+}
+[data-theme="dark"] .nav-link {
+  color: #b0b8cc;
+}
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: #ffffff;
+}
+[data-theme="dark"] .nav-link::after {
+  background: var(--crimson);
+}
+[data-theme="dark"] .brand-name {
+  color: #ffffff;
+}
+[data-theme="dark"] .brand-tag {
+  color: var(--gold);
+}
+
+/* --- Mobile Drawer --- */
+[data-theme="dark"] .mobile-drawer-sheet {
+  background: rgba(15, 17, 23, 0.97);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .mobile-nav-link {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.07);
+  color: #c8cedc;
+}
+[data-theme="dark"] .mobile-nav-link:hover,
+[data-theme="dark"] .mobile-nav-link.active {
+  background: rgba(242, 29, 47, 0.12);
+  color: #ffffff;
+}
+[data-theme="dark"] .nav-icon-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gold);
+}
+[data-theme="dark"] .mobile-nav-link.active .nav-icon-badge {
+  background: rgba(242, 29, 47, 0.2);
+  color: var(--crimson);
+}
+[data-theme="dark"] .nav-arrow {
+  color: rgba(255,255,255,0.3);
+}
+[data-theme="dark"] .drawer-close {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  color: #c8cedc;
+}
+[data-theme="dark"] .mobile-drawer-footer {
+  border-top-color: rgba(255,255,255,0.07);
+}
+
+/* --- Hero Section (already dark, minimal tweaks) --- */
+[data-theme="dark"] .hero-section {
+  background: #0f1117;
+}
+
+/* --- Gallery Section --- */
+[data-theme="dark"] .gallery-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .gallery-filter-bar {
+  background: rgba(26, 29, 39, 0.8);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .filter-pill {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+  color: #b0b8cc;
+}
+[data-theme="dark"] .filter-pill:hover {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+[data-theme="dark"] .filter-pill.active {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: #ffffff;
+}
+[data-theme="dark"] .year-pill {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+  color: #b0b8cc;
+}
+[data-theme="dark"] .year-pill.active {
+  background: var(--gold);
+  color: #000;
+}
+[data-theme="dark"] .gallery-grid-card {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.07);
+}
+[data-theme="dark"] .gallery-card-meta {
+  background: rgba(15, 17, 23, 0.9);
+  border-top-color: rgba(255,255,255,0.07);
+}
+[data-theme="dark"] .gallery-card-meta .card-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .gallery-card-meta .card-tag {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .gallery-empty-state {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(242, 29, 47, 0.15);
+}
+[data-theme="dark"] .gallery-empty-state .empty-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .gallery-empty-state .empty-desc {
+  color: #9ba3b8;
+}
+
+/* Lightbox */
+[data-theme="dark"] .lightbox-modal {
+  background: rgba(10, 11, 16, 0.97);
+}
+[data-theme="dark"] .lightbox-top-bar {
+  background: rgba(15, 17, 23, 0.9);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .lightbox-counter {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .lightbox-action-btn,
+[data-theme="dark"] .lightbox-close-btn {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  color: #c8cedc;
+}
+[data-theme="dark"] .lightbox-nav-arrow {
+  background: rgba(15, 17, 23, 0.8);
+  border-color: rgba(255,255,255,0.1);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .lightbox-caption-bar {
+  background: rgba(10, 11, 16, 0.95);
+  border-top-color: rgba(255,255,255,0.08);
+  color: #9ba3b8;
+}
+
+/* --- Durga Puja Section (already dark) --- */
+[data-theme="dark"] .puja-section {
+  background: #0d0e14;
+}
+[data-theme="dark"] .puja-venue-overlay {
+  background: rgba(20, 22, 30, 0.88);
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .venue-address-label,
+[data-theme="dark"] .venue-address-main,
+[data-theme="dark"] .venue-meta-item {
+  color: #c8cedc;
+}
+[data-theme="dark"] .puja-teaser-badge {
+  background: rgba(15,17,23,0.9);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--gold);
+}
+
+/* --- Cultural Section --- */
+[data-theme="dark"] .cultural-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .cultural-section-wrapper {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.07);
+}
+[data-theme="dark"] .cultural-content-col h2,
+[data-theme="dark"] .cultural-content-col .section-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .cultural-content-col p,
+[data-theme="dark"] .cultural-lead-text {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .feature-triplet-card {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .feature-triplet-card h4,
+[data-theme="dark"] .triplet-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .feature-triplet-card p,
+[data-theme="dark"] .triplet-desc {
+  color: #9ba3b8;
+}
+
+/* --- Social Service Section (already dark) --- */
+[data-theme="dark"] .service-section {
+  background: #111216;
+}
+[data-theme="dark"] .impact-glass-metric {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .metric-value {
+  color: #ffffff;
+}
+[data-theme="dark"] .metric-label {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .service-floating-stat {
+  background: rgba(20, 22, 30, 0.92);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* --- Celebrations Section --- */
+[data-theme="dark"] .celebrations-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .celebration-card,
+[data-theme="dark"] .glass-card {
+  background: rgba(26, 29, 39, 0.8);
+  border-color: rgba(255,255,255,0.08);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .glass-card h3,
+[data-theme="dark"] .glass-card h4,
+[data-theme="dark"] .celebration-card h3 {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .glass-card p,
+[data-theme="dark"] .celebration-card p {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .stat-card-glass {
+  background: rgba(26, 29, 39, 0.7);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .stat-number {
+  color: #ffffff;
+}
+[data-theme="dark"] .stat-label {
+  color: #9ba3b8;
+}
+
+/* --- Participate Section --- */
+[data-theme="dark"] .participate-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .participate-card {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .participate-card h3,
+[data-theme="dark"] .participate-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .participate-card p,
+[data-theme="dark"] .participate-desc {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .participate-card .feature-list li,
+[data-theme="dark"] .feature-list li {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .participate-card .feature-list li i {
+  color: var(--crimson);
+}
+
+/* --- About Section --- */
+[data-theme="dark"] .about-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .about-content-block {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.07);
+}
+[data-theme="dark"] .about-section h2,
+[data-theme="dark"] .about-section h3,
+[data-theme="dark"] .section-heading {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .about-section p,
+[data-theme="dark"] .about-lead {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .timeline-item {
+  border-left-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .timeline-year {
+  color: var(--gold);
+}
+[data-theme="dark"] .timeline-text {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .value-card {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .value-card h4 {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .value-card p {
+  color: #9ba3b8;
+}
+
+/* --- Contact Section --- */
+[data-theme="dark"] .contact-section {
+  background: #0f1117;
+}
+[data-theme="dark"] .contact-form-wrapper,
+[data-theme="dark"] .contact-card {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .contact-section h2,
+[data-theme="dark"] .contact-section h3 {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .contact-section p {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .contact-info-item {
+  color: #b0b8cc;
+}
+[data-theme="dark"] .contact-info-item i {
+  color: var(--crimson);
+}
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea,
+[data-theme="dark"] .form-group select {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+  color: #636b80;
+}
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus,
+[data-theme="dark"] .form-group select:focus {
+  border-color: var(--crimson);
+  background: rgba(255,255,255,0.07);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .form-label {
+  color: #b0b8cc;
+}
+[data-theme="dark"] .input-glass {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  color: #e8eaf0;
+}
+
+/* --- Footer --- */
+[data-theme="dark"] .site-footer {
+  background: #080a0f;
+  border-top-color: rgba(255,255,255,0.07);
+}
+[data-theme="dark"] .footer-statement {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .footer-column h5 {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .footer-nav-list a {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .footer-nav-list a:hover {
+  color: #ffffff;
+}
+[data-theme="dark"] .footer-social-icon {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.1);
+  color: #b0b8cc;
+}
+[data-theme="dark"] .footer-social-icon:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: #ffffff;
+}
+[data-theme="dark"] .footer-newsletter p {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .footer-newsletter-input {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .footer-newsletter-input::placeholder {
+  color: #636b80;
+}
+[data-theme="dark"] .footer-bottom-bar {
+  border-top-color: rgba(255,255,255,0.06);
+  color: #636b80;
+}
+[data-theme="dark"] .footer-bottom-bar a {
+  color: #9ba3b8;
+}
+
+/* --- Modals --- */
+[data-theme="dark"] .modal-overlay {
+  background: rgba(5, 6, 10, 0.92);
+}
+[data-theme="dark"] .modal-glass-container {
+  background: #1a1d27;
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .modal-header {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .modal-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .modal-subtitle {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .modal-close-btn {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  color: #c8cedc;
+}
+[data-theme="dark"] .modal-body {
+  color: #9ba3b8;
+}
+[data-theme="dark"] .modal-body h4,
+[data-theme="dark"] .modal-body h3 {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .modal-form-group input,
+[data-theme="dark"] .modal-form-group textarea,
+[data-theme="dark"] .modal-form-group select {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  color: #e8eaf0;
+}
+[data-theme="dark"] .modal-form-group label {
+  color: #b0b8cc;
+}
+[data-theme="dark"] .modal-footer {
+  border-top-color: rgba(255,255,255,0.08);
+}
+
+/* --- Generic Cards & Sections using --bg-page / --bg-card --- */
+[data-theme="dark"] .section-tag,
+[data-theme="dark"] .pretitle-badge {
+  color: var(--gold);
+}
+[data-theme="dark"] .section-title,
+[data-theme="dark"] h2.section-title {
+  color: #e8eaf0;
+}
+[data-theme="dark"] .section-subtitle,
+[data-theme="dark"] .section-lead {
+  color: #9ba3b8;
+}
+
+/* Divider lines */
+[data-theme="dark"] hr,
+[data-theme="dark"] .divider {
+  border-color: rgba(255,255,255,0.07);
+}
+
+/* Scroll-to-top button */
+[data-theme="dark"] .scroll-top-btn {
+  background: rgba(26, 29, 39, 0.9);
+  border-color: rgba(255,255,255,0.12);
+  color: #e8eaf0;
+}
+
+/* Countdown numbers */
+[data-theme="dark"] .countdown-block {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .countdown-number {
+  color: #ffffff;
+}
+[data-theme="dark"] .countdown-label {
+  color: #9ba3b8;
+}
+
+/* Selection highlight in dark mode */
+[data-theme="dark"] ::selection {
+  background: rgba(242, 29, 47, 0.35);
+  color: #ffffff;
+}
+

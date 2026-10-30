@@ -1,10 +1,11 @@
-/**
+﻿/**
  * Sangathani Club - Main Interactive Engine
  * iOS Liquid-Glass UI, Durga Puja Countdown, Gallery Lightbox,
  * Testimonial Slider, Modals & Interactive Forms
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initStickyHeader();
   initMobileDrawer();
   initCountdown();
@@ -1343,4 +1344,37 @@ function initServiceSlideshow() {
 
   // Start initial auto-play
   startAutoPlay();
+}
+
+
+/* ==========================================================================
+   THEME TOGGLE — Dark / Light Mode with localStorage Persistence
+   ========================================================================== */
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  // Read stored theme or fall back to light
+  const getTheme = () => {
+    try { return localStorage.getItem('sg-theme') || 'light'; } catch(e) { return 'light'; }
+  };
+
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    try { localStorage.setItem('sg-theme', theme); } catch(e) {}
+    // Update icon visibility
+    btn.classList.toggle('is-dark', theme === 'dark');
+  };
+
+  // Apply on load (in case inline script didn't run)
+  applyTheme(getTheme());
+
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
 }
