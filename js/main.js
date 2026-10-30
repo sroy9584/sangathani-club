@@ -1351,8 +1351,8 @@ function initServiceSlideshow() {
    THEME TOGGLE — Dark / Light Mode with localStorage Persistence
    ========================================================================== */
 function initThemeToggle() {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) return;
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  if (!toggleBtns.length) return;
 
   // Read stored theme or fall back to light
   const getTheme = () => {
@@ -1366,15 +1366,20 @@ function initThemeToggle() {
       document.documentElement.removeAttribute('data-theme');
     }
     try { localStorage.setItem('sg-theme', theme); } catch(e) {}
-    // Update icon visibility
-    btn.classList.toggle('is-dark', theme === 'dark');
+    // Update icon/state on all toggle buttons
+    toggleBtns.forEach(btn => {
+      btn.classList.toggle('is-dark', theme === 'dark');
+    });
   };
 
-  // Apply on load (in case inline script didn't run)
+  // Apply on load
   applyTheme(getTheme());
 
-  btn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
   });
 }
