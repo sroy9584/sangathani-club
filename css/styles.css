@@ -5480,3 +5480,99 @@ body.lightbox-open {
   background: #232838;
   border-radius: 8px;
 }
+
+/* --- Mobile Drawer Theme Toggle Card (Pixel-Perfect Card Matching About Us & Contact) --- */
+button.mobile-nav-link,
+button.mobile-theme-link,
+.mobile-theme-link {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 48px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 12px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.96rem !important;
+  font-weight: 600 !important;
+  color: #2D2A26 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+button.mobile-nav-link:hover,
+button.mobile-theme-link:hover,
+.mobile-theme-link:hover {
+  background: #FFFFFF !important;
+  color: var(--crimson) !important;
+  border-color: rgba(230, 57, 70, 0.2) !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.08) !important;
+}
+
+button.mobile-nav-link .nav-link-left,
+.mobile-theme-link .nav-link-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+button.mobile-nav-link .nav-icon-badge,
+.mobile-theme-link .nav-icon-badge {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background: rgba(230, 57, 70, 0.06) !important;
+  color: var(--crimson) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.88rem !important;
+  transition: all 0.22s ease !important;
+  flex-shrink: 0 !important;
+}
+
+button.mobile-nav-link:hover .nav-icon-badge,
+.mobile-theme-link:hover .nav-icon-badge {
+  background: var(--crimson) !important;
+  color: #FFFFFF !important;
+}
+
+.mobile-theme-link .theme-switch-track {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* In Dark Mode */
+[data-theme="dark"] button.mobile-nav-link,
+[data-theme="dark"] button.mobile-theme-link,
+[data-theme="dark"] .mobile-theme-link {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  color: #c8cedc !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] button.mobile-nav-link:hover,
+[data-theme="dark"] button.mobile-theme-link:hover,
+[data-theme="dark"] .mobile-theme-link:hover {
+  background: rgba(242, 29, 47, 0.15) !important;
+  border-color: rgba(242, 29, 47, 0.3) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] button.mobile-nav-link .nav-icon-badge,
+[data-theme="dark"] .mobile-theme-link .nav-icon-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--gold) !important;
+}

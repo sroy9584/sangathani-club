@@ -1351,7 +1351,7 @@ function initServiceSlideshow() {
    THEME TOGGLE — Dark / Light Mode with localStorage Persistence
    ========================================================================== */
 function initThemeToggle() {
-  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const toggleBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle, .theme-toggle-btn, .mobile-theme-link');
   if (!toggleBtns.length) return;
 
   // Read stored theme or fall back to light
