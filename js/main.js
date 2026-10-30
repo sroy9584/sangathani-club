@@ -369,6 +369,156 @@ const DEFAULT_GALLERY_PHOTOS = [
     "category": "kali",
     "year": "2025",
     "tileType": "tile-wide"
+  },
+  {
+    "id": 26,
+    "filename": "sangathani-cultural-2025-01.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-01.jpg",
+    "downloadName": "sangathani-club-cultural-2025-01.jpg",
+    "caption": "Cultural Program 2025 · Daytime Stage Setup & Preparations",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-tall"
+  },
+  {
+    "id": 27,
+    "filename": "sangathani-cultural-2025-02.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-02.jpg",
+    "downloadName": "sangathani-club-cultural-2025-02.jpg",
+    "caption": "Cultural Program 2025 · Evening Lighting & Heritage Mandap Stage",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 28,
+    "filename": "sangathani-cultural-2025-03.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-03.jpg",
+    "downloadName": "sangathani-club-cultural-2025-03.jpg",
+    "caption": "Cultural Program 2025 · Vibrant Night Illumination & Stage Ambiance",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 29,
+    "filename": "sangathani-cultural-2025-04.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-04.jpg",
+    "downloadName": "sangathani-club-cultural-2025-04.jpg",
+    "caption": "Cultural Program 2025 · Drama & Theatrical Expression",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 30,
+    "filename": "sangathani-cultural-2025-05.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-05.jpg",
+    "downloadName": "sangathani-club-cultural-2025-05.jpg",
+    "caption": "Cultural Program 2025 · Musical Performance & Stage Artistry",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 31,
+    "filename": "sangathani-cultural-2025-06.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-06.jpg",
+    "downloadName": "sangathani-club-cultural-2025-06.jpg",
+    "caption": "Cultural Program 2025 · Grand Inaugural Classical Dance",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 32,
+    "filename": "sangathani-cultural-2025-07.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-07.jpg",
+    "downloadName": "sangathani-club-cultural-2025-07.jpg",
+    "caption": "Cultural Program 2025 · Rabindra Sangeet & Folk Harmony",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 33,
+    "filename": "sangathani-cultural-2025-08.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-08.jpg",
+    "downloadName": "sangathani-club-cultural-2025-08.jpg",
+    "caption": "Cultural Program 2025 · Youth Dance Troupe Performance",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 34,
+    "filename": "sangathani-cultural-2025-09.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-09.jpg",
+    "downloadName": "sangathani-club-cultural-2025-09.jpg",
+    "caption": "Cultural Program 2025 · Instrumental Ensemble & Rhythms",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 35,
+    "filename": "sangathani-cultural-2025-10.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-10.jpg",
+    "downloadName": "sangathani-club-cultural-2025-10.jpg",
+    "caption": "Cultural Program 2025 · Community Chorus & Melodic Evening",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 36,
+    "filename": "sangathani-cultural-2025-11.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-11.jpg",
+    "downloadName": "sangathani-club-cultural-2025-11.jpg",
+    "caption": "Cultural Program 2025 · Classical Bharatanatyam Recital",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 37,
+    "filename": "sangathani-cultural-2025-12.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-12.jpg",
+    "downloadName": "sangathani-club-cultural-2025-12.jpg",
+    "caption": "Cultural Program 2025 · Festive Drama & Character Spotlight",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-hero"
+  },
+  {
+    "id": 38,
+    "filename": "sangathani-cultural-2025-13.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-13.jpg",
+    "downloadName": "sangathani-club-cultural-2025-13.jpg",
+    "caption": "Cultural Program 2025 · Vibrant Stage Choreography",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
+  },
+  {
+    "id": 39,
+    "filename": "sangathani-cultural-2025-14.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-14.jpg",
+    "downloadName": "sangathani-club-cultural-2025-14.jpg",
+    "caption": "Cultural Program 2025 · Ensemble Musical Tribute",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-wide"
+  },
+  {
+    "id": 40,
+    "filename": "sangathani-cultural-2025-15.jpg",
+    "src": "Photos/gallery/sangathani-cultural-2025-15.jpg",
+    "downloadName": "sangathani-club-cultural-2025-15.jpg",
+    "caption": "Cultural Program 2025 · Grand Finale & Artist Felicitation",
+    "category": "cultural",
+    "year": "2025",
+    "tileType": "tile-square"
   }
 ];
 
