@@ -3353,8 +3353,13 @@ body.lightbox-open {
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (Mobile-First / Fluid Adaptation)
+   COMPREHENSIVE RESPONSIVE DESIGN SYSTEM (Tablet, Mobile & Compact Devices)
+   Fluid layouts, touch-friendly tap targets, zero overflow, adaptive typography
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLET LANDSCAPE & COMPACT LAPTOPS (max-width: 1200px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1200px) {
   .hero-pillars-bar {
     grid-template-columns: repeat(3, 1fr);
@@ -3373,12 +3378,9 @@ body.lightbox-open {
   .card-span-5,
   .card-span-4,
   .card-span-8,
-  .card-span-6 {
-    grid-column: span 1;
-  }
-
-  .team-arch-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .card-span-6,
+  .card-span-12 {
+    grid-column: span 1 !important;
   }
 
   .gallery-masonry-grid {
@@ -3388,40 +3390,64 @@ body.lightbox-open {
   }
 }
 
+/* --------------------------------------------------------------------------
+   2. TABLET PORTRAIT & DESKTOP NAV BREAKPOINT (max-width: 1120px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1120px) {
   .nav-menu {
-    display: none;
+    display: none !important;
   }
 
   .menu-toggle {
-    display: flex;
+    display: flex !important;
   }
 }
 
+/* --------------------------------------------------------------------------
+   3. TABLETS (max-width: 992px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  /* Grid Layouts to 1 or 2 Columns */
   .legacy-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .feature-triplet-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature-triplet-card:nth-child(3) {
+    grid-column: span 2;
   }
 
   .puja-hero-layout {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .theme-story-layout {
-    grid-template-columns: 1fr;
+  .puja-visual-frame {
+    min-height: 440px;
   }
 
   .cultural-hero-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .timeline-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   .service-split-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .service-floating-stat {
@@ -3429,20 +3455,23 @@ body.lightbox-open {
     bottom: -16px;
   }
 
-  .testimonial-featured-card {
-    grid-template-columns: 1fr;
+  .participate-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .testimonial-photo-side {
-    min-height: 300px;
+  .participate-card:nth-child(3) {
+    grid-column: span 2;
   }
 
   .location-split-layout {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .social-posts-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 
   .footer-top-grid {
@@ -3450,139 +3479,227 @@ body.lightbox-open {
     gap: 36px;
   }
 
-  .timeline-cards-row {
-    grid-template-columns: repeat(2, 1fr);
+  .testimonial-featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-photo-side {
+    min-height: 280px;
   }
 }
 
+/* --------------------------------------------------------------------------
+   4. MOBILE DEVICES (max-width: 768px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
   .section {
-    padding: 64px 0;
+    padding: 44px 0;
+  }
+
+  .container,
+  .container-wide {
+    padding: 0 16px;
+  }
+
+  .section-header {
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .section-header.split {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .section-title,
+  h2.section-title {
+    font-size: clamp(1.75rem, 6.2vw, 2.35rem) !important;
+    line-height: 1.22;
+  }
+
+  .section-subtitle,
+  p.section-subtitle {
+    font-size: 0.94rem !important;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* --- Sticky Header --- */
+  .site-header {
+    top: 8px;
+    padding: 0 12px;
+  }
+
+  .nav-wrapper {
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+  }
+
+  .brand-logo-frame {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-tag {
+    font-size: 0.65rem;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .nav-actions .btn-pill-sm {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* --- Mobile Drawer --- */
+  .mobile-drawer-sheet {
+    width: 90%;
+    max-width: 360px;
+    padding: 18px 16px;
+  }
+
+  .mobile-nav-link {
+    padding: 11px 14px;
+    font-size: 0.92rem;
+    min-height: 46px;
+  }
+
+  /* --- Hero Section (#home) --- */
+  .hero-banner-card {
+    min-height: 560px;
+    border-radius: var(--radius-lg);
   }
 
   .hero-bg-media img {
-    object-position: 68% center;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(180deg,
-        rgba(14, 15, 18, 0.78) 0%,
-        rgba(14, 15, 18, 0.65) 45%,
-        rgba(14, 15, 18, 0.92) 85%,
-        rgba(14, 15, 18, 0.98) 100%);
+    object-position: 62% center;
   }
 
   .hero-content {
-    padding: 60px 24px 30px;
+    padding: 56px 16px 24px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-eyebrow-wrapper {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 0.94rem;
+    max-width: 92%;
+    margin: 12px auto 0;
+  }
+
+  .hero-highlight-pill {
+    max-width: 95%;
+    font-size: 0.8rem;
+    padding: 7px 14px;
+    margin: 14px auto 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    margin: 20px auto 0;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-pillars-bar {
-    margin: 0 16px 20px;
-    padding: 16px;
+    margin: 0 12px 16px;
+    padding: 14px;
+    border-radius: var(--radius-md);
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .hero-countdown-pill {
     grid-column: span 1;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
   }
 
-  .puja-feature-wrapper {
-    padding: 24px;
+  .pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
   }
 
-  .cultural-section-wrapper {
-    padding: 32px 20px;
+  /* --- Gallery Section (#gallery) --- */
+  .gallery-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 16px;
   }
 
-  .social-service-dark-wrap {
-    padding: 40px 20px;
+  .gallery-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    padding: 4px 2px 8px;
+    width: 100%;
   }
 
-  .gallery-masonry-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 150px;
-    gap: 10px;
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
   }
 
-  .lightbox-modal {
-    padding: 70px 14px 20px;
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 7px 16px;
+    font-size: 0.82rem;
   }
 
-  .lightbox-nav-arrow {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
+  .year-selector-timeline {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    justify-content: center;
   }
 
-  .lightbox-prev {
-    left: 10px;
-  }
-
-  .lightbox-next {
-    right: 10px;
-  }
-
-  .lightbox-top-bar {
-    top: 14px;
-    left: 14px;
-    right: 14px;
-  }
-
-  .lightbox-counter {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .lightbox-action-btn {
+  .year-btn {
     padding: 6px 14px;
     font-size: 0.8rem;
   }
 
-  .team-arch-grid {
-    grid-template-columns: 1fr;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .inquiry-form-card {
-    padding: 24px;
-  }
-
-  .form-row-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom-bar {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .lightbox-nav {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.7rem;
-  }
-
-  .countdown-timer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .celebrations-mosaic-grid {
-    grid-template-columns: 1fr;
-  }
-
   .gallery-masonry-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 130px;
+    grid-auto-rows: 140px;
     gap: 8px;
   }
 
@@ -3610,6 +3727,37 @@ body.lightbox-open {
     grid-row: span 1;
   }
 
+  .btn-gallery-expand {
+    width: 100%;
+    max-width: 340px;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 12px 20px;
+  }
+
+  /* --- Lightbox --- */
+  .lightbox-modal {
+    padding: 64px 12px 18px;
+  }
+
+  .lightbox-top-bar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .lightbox-counter {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+  }
+
+  .lightbox-action-btn,
+  .lightbox-close-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
   .lightbox-download-btn span {
     display: none;
   }
@@ -3618,18 +3766,539 @@ body.lightbox-open {
     padding: 8px 12px;
   }
 
+  .lightbox-nav-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
   .lightbox-caption-text {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+  }
+
+  /* --- Durga Puja 2027 Section (#durga-puja) --- */
+  .puja-feature-wrapper {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .puja-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .puja-visual-frame {
+    min-height: 380px;
+    border-radius: var(--radius-lg);
+  }
+
+  .teaser-center-badge {
+    padding: 16px 12px;
+  }
+
+  .teaser-pretitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+  }
+
+  .teaser-coming-title {
+    font-size: clamp(2.4rem, 9vw, 3.8rem);
+  }
+
+  .teaser-subtext {
+    font-size: 0.76rem;
+    padding: 5px 12px;
+  }
+
+  .puja-venue-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .puja-venue-overlay .venue-address-main {
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  .puja-venue-overlay .venue-address-sub {
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  .puja-venue-overlay .venue-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .puja-info-pane .section-title {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem) !important;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .countdown-container {
+    padding: 10px 8px;
+    border-radius: var(--radius-md);
+    margin: 12px 0;
+  }
+
+  .countdown-timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .time-slot {
+    padding: 6px 2px;
+  }
+
+  .time-slot .number {
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+
+  .time-slot .unit {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+  }
+
+  .theme-reveal-box {
+    padding: 12px 14px;
+  }
+
+  .puja-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .puja-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Cultural Section (#cultural) --- */
+  .cultural-section-wrapper {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .cultural-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .participation-glass-card {
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .participation-detail-item {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cultural-timeline-box {
+    margin-top: 22px;
   }
 
   .timeline-cards-row {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .timeline-slot-card {
+    padding: 12px 14px;
+  }
+
+  .cultural-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .cultural-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Social Service Section (#social-service) --- */
+  .social-service-dark-wrap {
+    padding: 24px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .service-split-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-slideshow-container {
+    height: 250px;
+    min-height: 250px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .service-floating-stat {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 12px;
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .impact-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .impact-glass-metric {
+    padding: 12px 10px;
+    text-align: center;
+  }
+
+  .impact-glass-metric .stat-num {
+    font-size: 1.4rem;
+  }
+
+  .impact-glass-metric .stat-desc {
+    font-size: 0.72rem;
+  }
+
+  .service-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .service-actions-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Celebrations & Mosaic --- */
+  .feature-triplet-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature-triplet-card {
+    min-height: 260px;
+    border-radius: var(--radius-lg);
+  }
+
+  .feature-triplet-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .celebrations-mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .celebration-card {
+    grid-column: span 1 !important;
+    min-height: 220px;
+    border-radius: var(--radius-md);
+  }
+
+  .celebration-card-body {
+    padding: 16px 14px;
+  }
+
+  .celebration-card-body h3 {
+    font-size: 1.25rem;
+  }
+
+  /* --- Participate Section (#participate) --- */
+  .participate-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .participate-card {
+    padding: 22px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .participate-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .participate-title {
+    font-size: 1.25rem;
+  }
+
+  .participate-card .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  /* --- About Us Section (#about) --- */
+  .legacy-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .legacy-collage {
+    height: 260px;
+    min-height: 260px;
+    margin-bottom: 20px;
+  }
+
+  .stat-box-featured {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .legacy-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card-glass {
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .stat-card-glass .stat-value {
+    font-size: 1.35rem;
+  }
+
+  .stat-card-glass .stat-name {
+    font-size: 0.78rem;
+  }
+
+  /* --- Contact Section (#contact) --- */
+  .location-split-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .map-visual-pane {
+    height: 260px;
+    border-radius: var(--radius-lg);
+  }
+
+  .glass-map-overlay-card {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 12px;
+    padding: 16px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .inquiry-form-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-control {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .inquiry-form-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Social Community Section --- */
+  .social-hub-container {
+    padding: 0;
+  }
+
+  .social-platforms-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .social-channel-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 12px;
+    font-size: 0.78rem;
+    gap: 6px;
   }
 
   .social-posts-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .social-post-card {
+    border-radius: var(--radius-md);
+  }
+
+  /* --- Footer --- */
+  .site-footer {
+    padding: 44px 0 24px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .footer-brand .brand-monogram {
+    justify-content: center;
+  }
+
+  .footer-statement {
+    max-width: 90%;
+    margin: 10px auto 0;
+    font-size: 0.88rem;
+  }
+
+  .footer-social-links {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-nav-list {
+    align-items: center;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    margin: 12px auto 0;
+    gap: 8px;
+  }
+
+  .footer-newsletter-input {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-newsletter-form .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 0.78rem;
+    padding-top: 18px;
+  }
+
+  /* --- Modals --- */
+  .modal-glass-container {
+    padding: 24px 16px;
+    width: 92%;
+    max-height: 85vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .modal-close-btn {
+    width: 36px;
+    height: 36px;
+    top: 14px;
+    right: 14px;
+  }
+
+  .modal-form-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
+
+/* --------------------------------------------------------------------------
+   5. COMPACT MOBILE SCREENS (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .site-header {
+    top: 6px;
+    padding: 0 8px;
+  }
+
+  .brand-tag {
+    display: none !important;
+  }
+
+  .nav-actions .btn-pill-sm span {
+    display: none;
+  }
+
+  .nav-actions .btn-pill-sm {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    padding: 48px 12px 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 7.5vw, 2.5rem);
+  }
+
+  .time-slot .number {
+    font-size: 1.2rem;
+  }
+
+  .time-slot .unit {
+    font-size: 0.58rem;
+  }
+
+  .gallery-masonry-grid {
+    grid-auto-rows: 125px;
+    gap: 6px;
+  }
+
+  .social-platforms-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================================================
    PARTICIPATE & GET INVOLVED SECTION
    ========================================================================== */
